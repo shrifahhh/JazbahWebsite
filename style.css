@@ -1,0 +1,98 @@
+/* --- GLOBAL THEME VARIABLES --- */
+:root {
+  --max-content-width: 1200px;
+  --container-safe-padding: 30px;
+  --navy-dark: #050b14;
+  --sky-blue: #38bdf8;
+  --text-slate: #cbd5e1;
+}
+
+/* --- MAIN HEADER LAYER --- */
+.main-header {
+  width: 100%;
+  background-color: #ffffff; /* Solid premium white clean bar */
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* Ensures the header floats over imagery flawlessly */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+/* --- CONTAINED ALIGNMENT CONTAINER --- */
+.nav-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 20px var(--container-safe-padding);
+  display: flex;
+  justify-content: space-between; /* Pushes Logo to left, Links to right */
+  align-items: center;
+}
+
+/* --- LOGO WRAPPER --- */
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  height: 45px; /* Adjust based on your asset scale */
+  width: auto;
+}
+
+.logo-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+}
+
+.reg-number {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+/* --- NAVIGATION LINKS --- */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px; /* Smooth, spacious distance between layout buttons */
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Montserrat', sans-serif;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569; /* Polished dark gray text link color */
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Interactive Hover States */
+.nav-links a:hover,
+.nav-links a.active {
+  color: #0284c7; /* Focus ocean blue selection link color */
+}
+
+/* Micro-interaction sliding underline effect */
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--sky-blue);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%; /* Expands accent underline smoothly */
+}
