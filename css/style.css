@@ -1,0 +1,363 @@
+/* --- GLOBAL THEME VARIABLES --- */
+:root {
+  --max-content-width: 1200px;
+  --container-safe-padding: 30px;
+  --navy-dark: #050b14;
+  --sky-blue: #38bdf8;
+  --text-slate: #cbd5e1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* --- MAIN HEADER --- */
+.main-header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  padding: 20px var(--container-safe-padding);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  height: 45px;
+  width: auto;
+}
+
+.logo-text {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.reg-num {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #475569;
+  padding: 8px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: #0284c7;
+}
+
+/* --- ABOUT TOP SECTION --- */
+.mainAbUs-section {
+  background: linear-gradient(135deg, #0a1628 0%, #1a3a5c 45%, #2d5a87 100%);
+  padding: 80px var(--container-safe-padding);
+}
+
+.main-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.about-content h1 {
+  margin: 0 0 24px;
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.about-content p {
+  margin: 0 0 24px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-slate);
+}
+
+.about-facts {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.about-facts li {
+  position: relative;
+  padding-left: 18px;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+  color: #ffffff;
+}
+
+.about-facts li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--sky-blue);
+}
+
+/* --- GALLERY --- */
+.gallery-container {
+  width: 100%;
+  user-select: none;
+}
+
+.gallery-viewport {
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.gallery-track {
+  display: flex;
+  transition: transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.gallery-slide {
+  flex: 0 0 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  padding: 24px 0;
+  min-height: 220px;
+}
+
+.gallery-item {
+  flex: 0 0 26%;
+  aspect-ratio: 1;
+  padding: 0;
+  border: none;
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  cursor: pointer;
+  transform: scale(0.82);
+  opacity: 0.75;
+  transition: transform 0.35s ease, opacity 0.35s ease, flex-basis 0.35s ease;
+}
+
+.gallery-item.is-active {
+  flex: 0 0 38%;
+  transform: scale(1);
+  opacity: 1;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.gallery-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.gallery-dot {
+  width: 10px;
+  height: 10px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+}
+
+.gallery-dot.is-active {
+  background-color: var(--sky-blue);
+}
+
+/*
+  EXECUTION SECTION — background image
+  Put your ship/ocean photo at: images/execution-bg.jpg
+  The gradient on top darkens the photo so white text stays readable.
+*/
+.execution-section {
+  position: relative;
+  padding: 80px var(--container-safe-padding);
+  color: #ffffff;
+  background-image:
+    linear-gradient(rgba(8, 20, 40, 0.78), rgba(8, 20, 40, 0.78)),
+    url('../images/execution-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.execution-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.execution-title {
+  margin: 0 0 16px;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+}
+
+.execution-quote {
+  max-width: 720px;
+  margin: 0 auto 56px;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text-slate);
+}
+
+.vision-mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  text-align: left;
+}
+
+.vision-block,
+.mission-block {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.mission-block {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.vision-block p,
+.mission-block p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #ffffff;
+}
+
+.vm-label {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 10px 28px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+}
+
+.mission-block .vm-label {
+  align-self: flex-end;
+}
+
+/* --- FOOTER --- */
+.main-footer {
+  background-color: var(--navy-dark);
+  color: var(--text-slate);
+  padding: 48px var(--container-safe-padding);
+}
+
+.footer-container {
+  max-width: var(--max-content-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.footer-logo-img {
+  height: 40px;
+  width: auto;
+  margin-bottom: 12px;
+}
+
+.footer-container p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.footer-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-nav-links a {
+  color: var(--text-slate);
+  text-decoration: none;
+  font-size: 0.9rem;
+  line-height: 2;
+}
+
+@media (max-width: 900px) {
+  .main-container,
+  .vision-mission-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-block {
+    text-align: left;
+  }
+
+  .mission-block .vm-label {
+    align-self: flex-start;
+  }
+
+  .execution-section {
+    background-attachment: scroll;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+}
