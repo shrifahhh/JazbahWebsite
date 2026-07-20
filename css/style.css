@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -291,7 +291,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
    SECTION: OUR SERVICES
    ========================================================================== */
 .services-container {
-    max-width: 1500px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 5%;
     
