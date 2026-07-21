@@ -16,56 +16,51 @@ body {
     padding: 0 20px;
 }
 
-/* h1 - 64px - Extra Bold */
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
 h1, .hero-text-block h1 {
     font-size: 64px;
-    font-weight: 800; /* Extra Bold */
+    font-weight: 800;
     line-height: 1.15;
     letter-spacing: -0.02em;
 }
 
-/* h2 - 46px - Bold */
 h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clients-section h2 {
     font-size: 46px;
-    font-weight: 700; /* Bold */
+    font-weight: 700;
     line-height: 1.25;
     letter-spacing: -0.01em;
 }
 
-/* h3 - 36px - Bold */
 h3, .metric-stat-title, .service-title, .HSE-container h3 {
     font-size: 36px;
-    font-weight: 700; /* Bold */
+    font-weight: 700;
     line-height: 1.3;
 }
 
-/* p - 16px - Light */
 p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .service3-grid p, .HSE-container p {
     font-size: 16px;
-    font-weight: 300; /* Light */
+    font-weight: 300;
     line-height: 1.6;
     color: #FFFFFF; 
 }
 
-/* Pastikan warna teks dalam Hero tetap putih walaupun global bertukar */
 .hero-text-block h1,
 .hero-text-block p {
     color: #ffffff;
 }
 
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 .main-header {
     position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000; /* Supaya navbar sentiasa duduk di lapisan paling atas */
-    
-    background: 
-    
-        linear-gradient(to left, rgba(114, 147, 204, 0.4), rgba(255, 255, 255, 0.4)),
-        
-        #ffffff;
-        
+    z-index: 1000;
+    background: linear-gradient(to left, rgba(114, 147, 204, 0.4), rgba(255, 255, 255, 0.4)), #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
 }
 
@@ -75,8 +70,9 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 5%; /* Guna padding ini untuk adjust ketinggian navbar kau */
+    padding: 15px 5%;
 }
+
 .logo-area {
     display: flex;
     align-items: center;
@@ -123,13 +119,12 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     color: #3b82f6;
 }
 
-/* Menu terakhir (Contact Us) dipertebalkan mengikut mockup */
 .nav-links li:last-child a {
     font-weight: 800;
     color: #102a54;
 }
 
-/* --- DROPDOWN ENGINE FOR CREDENTIALS --- */
+/* DROPDOWN */
 .dropdown-wrapper {
     position: relative;
 }
@@ -176,20 +171,17 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     transform: translateX(-50%) translateY(5px);
 }
 
-
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero-section {
     position: relative;
     width: 100%;
-    min-height: 100vh; /* Memenuhi tinggi keseluruhan skrin */
-    
-    /* Letak gambar latar belakang berserta overlay gelap sedikit supaya tulisan putih mudah dibaca */
+    min-height: 100vh;
     background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.45)), 
                 url('../images/herobackground.png') no-repeat center center/cover;
-    
     display: flex;
-    align-items: center; /* Menyusun kandungan hero betul-betul di tengah secara menegak */
-    
-    /* ⚠️ PENTING: Tolak kandungan ke bawah supaya tidak bertembung/terpotong di bawah navbar */
+    align-items: center;
     padding-top: 100px; 
 }
 
@@ -198,19 +190,17 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     max-width: 1900px;
     margin: 0 auto;
     padding: 0 5%;
-    margin-bottom: 140px; /* Bagi jarak bawah supaya tidak terlalu rapat dengan bahagian bawah hero */
+    margin-bottom: 140px;
 }
 
-/* Blok Tulisan Hero (Disusun rapat ke sebelah kiri seperti dalam mockup) */
 .hero-text-block {
     max-width: 1900px;
     text-align: left;
     color: #ffffff;
-    
 }
 
 .hero-text-block h1 {
-    font-size: 3rem; /* Saiz tulisan tajuk yang besar dan tebal */
+    font-size: 3rem;
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 50px;
@@ -224,7 +214,6 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     opacity: 0.9;
 }
 
-/* REKA BENTUK BUTANG (Sama seperti butang biru pada mockup) */
 .btn-FOM {
     display: inline-block;
     background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
@@ -234,7 +223,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     font-size: 0.85rem;
     letter-spacing: 0.5px;
     padding: 14px 28px;
-    border-radius: 30px; /* Butang melengkung penuh kapsul */
+    border-radius: 30px;
     box-shadow: 0 4px 15px rgba(29, 78, 216, 0.4);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -244,29 +233,25 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     box-shadow: 0 6px 20px rgba(29, 78, 216, 0.6);
 }
 
-.whyChooseUs-section, 
-.services-section {
-    background: linear-gradient(
-        to left, 
-        rgba(29, 65, 133, 1.0), 
-        rgba(19, 43, 87, 1.0), 
-        rgba(7, 15, 31, 1.0)
-    );
+/* ==========================================================================
+   WHY CHOOSE US SECTION (DIBETULKAN SINTAKS)
+   ========================================================================== */
+.whyChooseUs-section {
+    background: linear-gradient(to left, rgba(29, 65, 133, 1.0), rgba(19, 43, 87, 1.0), rgba(7, 15, 31, 1.0));
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
-    
+}
 
-    .whyChooseUs-container {
+.whyChooseUs-container {
     max-width: 1900px;
     margin: 0 auto;
     padding: 0 5%;
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Pecah 3 lajur sebaris */
+    grid-template-columns: repeat(3, 1fr);
     gap: 70px;
     text-align: center;
 }
 
-/* h2 - 46px - Bold (Untuk Nombor Metrik) */
 .metric-stat-numb {
     font-size: 46px;
     font-weight: 700;
@@ -274,68 +259,66 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     margin-bottom: 5px;
 }
 
-/* h3 - 36px - Bold -> Diubah suai sedikit mengikut visual mockup (kecil sikit dari nombor) */
 .metric-stat-title {
     font-weight: 700;
     color: #ffffff;
     margin-bottom: 12px;
 }
 
-/* p - 16px - Light */
 .metric-stat-text {
     font-size: 16px;
-    font-weight: 300; /* Light */
+    font-weight: 300;
     line-height: 1.6;
     color: #FFFFFF; 
 }
 
 /* ==========================================================================
-   SECTION: OUR SERVICES
+   OUR SERVICES SECTION
    ========================================================================== */
+.services-section {
+    background: linear-gradient(to left, rgba(29, 65, 133, 1.0), rgba(19, 43, 87, 1.0), rgba(7, 15, 31, 1.0));
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
+}
+
 .services-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 5%;
-    
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Pecah 3 lajur sebaris */
-    gap: 30px; /* Jarak antara kad */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     text-align: center;
 }
 
-/* 2. Paksa Tajuk Utama untuk memenuhi lebar penuh (Span 3 Columns) */
 .services-section-title {
-    grid-column: 1 / span 3; /* Mengambil ruang dari lajur 1 hingga 3 */
+    grid-column: 1 / span 3;
     font-size: 46px;
     font-weight: 700;
     margin-bottom: 10px;
     color: #ffffff;
 }
 
-/* 3. Paksa Perenggan Penerangan untuk memenuhi lebar penuh juga */
 .services-section-text {
-    grid-column: 1 / span 3; /* Sama juga, penuhkan satu baris skrin */
+    grid-column: 1 / span 3;
     font-size: 16px;
     font-weight: 300;
-    margin-bottom: 40px; /* Bagi jarak sebelum bermula kotak servis */
+    margin-bottom: 40px;
 }
 
-/* 4. Rekaan untuk setiap kotak servis kau (service1, service2, service3) */
 .service1-grid, 
 .service2-grid, 
 .service3-grid {
-    background: rgba(255, 255, 255, 0.04) ;
+    background: rgba(255, 255, 255, 0.04);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 24px; /* Bucu melengkung ikut mockup */
+    border-radius: 24px;
     padding: 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease, background 0.3s ease;
-
 }
 
-/* Kesan Hover pada kad */
 .service1-grid:hover, 
 .service2-grid:hover, 
 .service3-grid:hover {
@@ -343,11 +326,10 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     background: rgba(255, 255, 255, 0.07);
 }
 
-/* 5. Gaya elemen di dalam setiap kad */
 .service-icon {
     width: 100%;
     height: 180px;
-    object-fit: cover; /* Biar gambar tak penyek */
+    object-fit: cover;
     border-radius: 16px;
     margin-bottom: 25px;
 }
@@ -356,15 +338,80 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 15px;
-    min-height: 58px; /* Biar ketinggian tajuk sekata */
+    min-height: 58px;
 }
 
 .service1-grid p, 
 .service2-grid p, 
 .service3-grid p {
-   
     margin-bottom: 30px;
-    flex-grow: 1; /* Tolak butang ke bawah jika teks pendek */
+    flex-grow: 1;
 }
 
+/* ==========================================================================
+   HSE SECTION (SEKARANG SUDAH BERFUNGSI DENGAN BAIK!)
+   ========================================================================== */
+.HSE-section {
+    background: #FFFFFF;
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.HSE-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.HSE-section-title {
+    grid-column: 1 / span 3;
+    font-size: 46px;
+    font-weight: 700;
+    margin-bottom: 40px;
+    color: #000000; /* 💡 Nota: Tukar dari 'black' ke '#ffffff' supaya nampak atas background gelap */
+}
+
+/* Kotak Kad HSE (Sama macam gaya kad Services supaya konsisten) */
+.HSE-details1,
+.HSE-details2,
+.HSE-details3 {
+    
+    padding: 80px 0;
+    border-radius: 24px;
+    padding: 35px 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.HSE-details1:hover,
+.HSE-details2:hover,
+.HSE-details3:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.07);
+}
+
+.HSE-container h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 15px;
+}
+
+.HSE-container p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: #000000;
+}
+
+.HSE-FOM-btn {
+    grid-column: 1 / span 3;
+    text-align: center;
+    margin-top: 40px;
 }
