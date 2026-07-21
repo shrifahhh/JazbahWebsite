@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -26,8 +26,8 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="facilities.html">Facilities</a></li>
-                    <li class="dropdown">
-                        <a href="credentials.html">Credentials</a>
+                    <li class="dropdown-wrapper">
+                        <a href="credentials.html" class="dropdown-trigger">Credentials</a>
                         <ul class="dropdown-menu">
                             <li><a href="projects.html">Projects</a></li>
                             <li><a href="clients.html">Clients</a></li>
@@ -42,7 +42,7 @@
 
     <section class="hero-section">
         <div class="hero-container">
-            <div class="hero-text-block">
+            <div class="hero-text-block reveal">
                 <h1>Empowering the Growth<br>&amp; Development of<br>Sabah’s Energy Sector.</h1>
                 <p>A leading, 100% local Sabahan Oil &amp; Gas service provider<br> delivering innovative, efficient, and sustainable offshore catering<br> and food provision solutions.</p>
                 <a href="about.html" class="btn-FOM">Find Out More &rarr;</a>
@@ -52,17 +52,17 @@
 
     <section class="whyChooseUs-section">
         <div class="whyChooseUs-container">
-            <div class="metrics-column-box">
+            <div class="metrics-column-box reveal delay-1">
                 <h2 class="metric-stat-numb">15+ Years</h2>
                 <h3 class="metric-stat-title">Industry Experience</h3>
                 <p class="metric-stat-text">Over a decade of delivering project-based<br> solutions across the public, private, and<br> energy sectors.</p>
             </div>
-            <div class="metrics-column-box">
+            <div class="metrics-column-box reveal delay-2">
                 <h2 class="metric-stat-numb">100% Local</h2>
                 <h3 class="metric-stat-title">Sabahan Owned</h3>
                 <p class="metric-stat-text">A proudly local Sabahan company, with a<br> strong commitment to supporting the<br> growth and development of Sabah’s energy sector.</p>
             </div>
-            <div class="metrics-column-box">
+            <div class="metrics-column-box reveal delay-3">
                 <h2 class="metric-stat-numb">20+ Clients</h2>
                 <h3 class="metric-stat-title">Trusted Partners</h3>
                 <p class="metric-stat-text">A trusted partner to over 20 clients across<br> the public, private, and energy sectors,<br> delivering innovative and sustainable solutions.</p>
@@ -72,104 +72,126 @@
 
     <section class="services-section">
         <div class="services-container">
-            <h2 class="services-section-title">Our Services</h2>
-            <p class="services-section-text">We provide a comprehensive range of services to support the growth and development of Sabah’s energy sector, including:</p>
-            <div class="service1-grid">
-                    <img src="images/service1.png" alt="Service 1 Icon" class="service-icon">
-                    <h3 class="service-title">FOOD PROVISION SUPPLY SERVICES</h3>
-                    <p>High-quality cold chain logistics and<br> certified Halal provisions engineered to<br> deliver fresh, nutritious food supplies to<br> remote offshore teams.</p>
-                    <a href="about.html" class="btn-FOM">Learn More &rarr;</a>
+            <h2 class="services-section-title reveal">Our Services</h2>
+            <p class="services-section-text reveal delay-1">We provide a comprehensive range of services to support the growth and development of Sabah’s energy sector, including:</p>
+            
+            <div class="service1-grid reveal delay-1">
+                <img src="images/service1.png" alt="Service 1 Icon" class="service-icon">
+                <h3 class="service-title">FOOD PROVISION SUPPLY SERVICES</h3>
+                <p>High-quality cold chain logistics and<br> certified Halal provisions engineered to<br> deliver fresh, nutritious food supplies to<br> remote offshore teams.</p>
+                <a href="about.html" class="btn-FOM">Learn More &rarr;</a>
             </div>
-            <div class="service2-grid">
-                    <img src="images/service2.png" alt="Service 2 Icon" class="service-icon">
-                    <h3 class="service-title">OFFSHORE CATERING & ASSOCIATED SERVICES</h3>
-                    <p>Complete galley management, professional <br>housekeeping, and laundry operations<br>delivered by marine-certified crews <br>prioritizing hygiene and hospitality.</p>
-                    <a href="about.html" class="btn-FOM">Learn More &rarr;</a>
+            <div class="service2-grid reveal delay-2">
+                <img src="images/service2.png" alt="Service 2 Icon" class="service-icon">
+                <h3 class="service-title">OFFSHORE CATERING & ASSOCIATED SERVICES</h3>
+                <p>Complete galley management, professional <br>housekeeping, and laundry operations<br>delivered by marine-certified crews <br>prioritizing hygiene and hospitality.</p>
+                <a href="about.html" class="btn-FOM">Learn More &rarr;</a>
             </div>
-            <div class="service3-grid">
-                    <img src="images/service3.png" alt="Service 3 Icon" class="service-icon">
-                    <h3 class="service-title">MANPOWER SUPPLYSERVICES</h3>
-                    <p>Rapid recruitment and mobilization of<br> certified offshore personnel, connecting <br>your operations with qualified chefs,<br> stewards, and camp bosses.</p>
-                    <a href="about.html" class="btn-FOM">Learn More &rarr;</a>
+            <div class="service3-grid reveal delay-3">
+                <img src="images/service3.png" alt="Service 3 Icon" class="service-icon">
+                <h3 class="service-title">MANPOWER SUPPLY SERVICES</h3>
+                <p>Rapid recruitment and mobilization of<br> certified offshore personnel, connecting <br>your operations with qualified chefs,<br> stewards, and camp bosses.</p>
+                <a href="about.html" class="btn-FOM">Learn More &rarr;</a>
             </div>
         </div>
     </section>
 
     <section class="HSE-section">
         <div class="HSE-container">
-            <h2 class="HSE-section-title">HEALTH, SAFETY &amp; ENVIRONMENT (HSE) </h2>
-            <div class="HSE-details1">
+            <h2 class="HSE-section-title reveal">HEALTH, SAFETY &amp; ENVIRONMENT (HSE)</h2>
+            <div class="HSE-details1 reveal delay-1">
                 <h3>Triple-Certified Standards</h3>
-                <p>Over a decade of delivering project-based solutions,our operational management system strictly complies with ISO 9001:2015 (Quality Management) and ISO 45001:2018 (Occupational Health & Safety Management) frameworks audited by NIOSH across the public, private, and energy sectors</p>
+                <p>Over a decade of delivering project-based solutions, our operational management system strictly complies with ISO 9001:2015 (Quality Management) and ISO 45001:2018 (Occupational Health & Safety Management) frameworks audited by NIOSH across the public, private, and energy sectors.</p>
             </div>
-            <div class="HSE-details2">
+            <div class="HSE-details2 reveal delay-2">
                 <h3>Absolute Stop Work Policy</h3>
                 <p>Every employee and contractor on our payroll is fully<br>empowered and mandated to immediately halt any<br> operational activity if they detect an unmitigated or <br>intolerable risk—with zero penalty.</p>
             </div>
-            <div class="HSE-details3">
+            <div class="HSE-details3 reveal delay-3">
                 <h3>Rigorous Food Safety Assurance</h3>
                 <p>We manage potential biological and physical <br>operational hazards through continuous active<br> control plans, strictly enforcing international<br> food safety compliance across our entire<br> logistics lifecycle.</p>
             </div>
-            
         </div>
-            <div class="HSE-FOM-btn">
-                <a href="about.html" class="btn-FOM">Find Out More &rarr;</a>
-            </div>
+        <div class="HSE-FOM-btn reveal">
+            <a href="about.html" class="btn-FOM">Find Out More &rarr;</a>
+        </div>
     </section>
+
     <section class="clients-section">
-    <h2>Our Clients</h2>
-    
-    <div class="clients-row">
-        <div class="clients-card">
-            <img src="images/petronascarigali.png" alt="Petronas">
-        </div>
+        <h2 class="reveal">Our Clients</h2>
+        
+        <div class="clients-row">
+            <div class="clients-card reveal delay-1">
+                <img src="images/petronascarigali.png" alt="Petronas">
+            </div>
 
-        <div class="clients-card">
-            <img src="images/bayulink.png" alt="Bayulink">
-        </div>
+            <div class="clients-card reveal delay-2">
+                <img src="images/bayulink.png" alt="Bayulink">
+            </div>
 
-        <!-- 🌟 Tambah class "logo-shell" di sini -->
-        <div class="clients-card">
-            <img src="images/shell.png" alt="Shell" class="logo-shell">
-        </div>
+            <div class="clients-card reveal delay-3">
+                <img src="images/shell.png" alt="Shell" class="logo-shell">
+            </div>
 
-        <div class="clients-card">
-            <img src="images/kpoc.png" alt="KPOC">
-        </div>
+            <div class="clients-card reveal delay-4">
+                <img src="images/kpoc.png" alt="KPOC">
+            </div>
 
-        <a href="clients.html" class="btn-FOM">SEE MORE &rarr;</a>
-    </div>
-</section>
+            <a href="clients.html" class="btn-FOM reveal delay-5">SEE MORE &rarr;</a>
+        </div>
+    </section>
 
-  <footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-logo">
-            <img src="images/jazbah-logo.png" alt="Jazbah Logo" class="footer-logo-img">
-            <p>JAZBAH ENTERPRISE SDN. BHD.</p>
-            <p class="reg-num">(1017804-K)</span></span>
-            <p class="footer-desc">A premier 100% Sabahan Bumiputera<br>enterprise delivering integrated food<br> provisions, offshore catering, and <br>technical support services to<br> Malaysia’s energy sector.</p>
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/jazbah-logo.png" alt="Jazbah Logo" class="footer-logo-img">
+                <p class="company-name">JAZBAH ENTERPRISE SDN. BHD.</p>
+                <p class="reg-num">(1017804-K)</p>
+                <p class="footer-desc">A premier 100% Sabahan Bumiputera<br>enterprise delivering integrated food<br> provisions, offshore catering, and <br>technical support services to<br> Malaysia’s energy sector.</p>
+            </div>
+            <div class="footer-nav">
+                <p class="footer-title">Quick Links</p>
+                <ul class="footer-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="credentials.html">Credentials</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <p class="footer-title">Contact Us</p>
+                <p><strong>Main Office</strong><br>
+                Lot 7, Block A,<br>
+                1st Floor, Lok Kawi Point,<br>
+                Jalan Papar, 89600 Papar, Sabah.<br><br>
+                <strong>Tel:</strong> +6088-736 818</p>
+            </div>
         </div>
-        <div class="footer-nav">
-            <p>Quick Links</p>
-            <ul class="footer-nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="facilities.html">Facilities</a></li>
-                <li><a href="credentials.html">Credentials</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact">
-            <p>Contact Us</p>
-            <p>Main Office <br>
-               Lot 7, Block A,<br>
-               1st Floor,Lok Kawi Point,<br>
-               Jalan Papar,89600 Papar, Sabah.<br>
+    </footer>
 
-               Tel: +6088-736 818
-        </div>
-    </div>
-  </footer>
+    <!-- Script Animasi Scroll -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const revealElements = document.querySelectorAll(".reveal");
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.15
+            };
+
+            const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealOnScroll.observe(el));
+        });
+    </script>
 </body>
 </html>
