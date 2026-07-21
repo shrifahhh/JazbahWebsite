@@ -249,8 +249,8 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     background: linear-gradient(
         to left, 
         rgba(29, 65, 133, 1.0), 
-        rgba(19, 43, 87, 1.0), /* Tambah koma di sini */
-        rgba(7, 15, 31, 1.0)    /* Tukar Hex ke nilai RGBA yang betul */
+        rgba(19, 43, 87, 1.0), 
+        rgba(7, 15, 31, 1.0)
     );
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
@@ -325,7 +325,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 .service1-grid, 
 .service2-grid, 
 .service3-grid {
-    background: rgba(255, 255, 255, 0.04);
+    background: rgba(255, 255, 255, 0.04) ;
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 24px; /* Bucu melengkung ikut mockup */
     padding: 30px;
@@ -333,6 +333,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     flex-direction: column;
     align-items: center;
     transition: transform 0.3s ease, background 0.3s ease;
+
 }
 
 /* Kesan Hover pada kad */
