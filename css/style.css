@@ -198,6 +198,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     max-width: 1900px;
     margin: 0 auto;
     padding: 0 5%;
+    margin-bottom: 140px; /* Bagi jarak bawah supaya tidak terlalu rapat dengan bahagian bawah hero */
 }
 
 /* Blok Tulisan Hero (Disusun rapat ke sebelah kiri seperti dalam mockup) */
@@ -205,13 +206,14 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     max-width: 1900px;
     text-align: left;
     color: #ffffff;
+    
 }
 
 .hero-text-block h1 {
     font-size: 3rem; /* Saiz tulisan tajuk yang besar dan tebal */
     font-weight: 800;
     line-height: 1.2;
-    margin-bottom: 25px;
+    margin-bottom: 50px;
 }
 
 .hero-text-block p {
