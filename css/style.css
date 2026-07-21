@@ -317,7 +317,6 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     grid-column: 1 / span 3; /* Sama juga, penuhkan satu baris skrin */
     font-size: 16px;
     font-weight: 300;
-    color: #cbd5e0;
     margin-bottom: 40px; /* Bagi jarak sebelum bermula kotak servis */
 }
 
@@ -347,16 +346,15 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 /* 5. Gaya elemen di dalam setiap kad */
 .service-icon {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover; /* Biar gambar tak penyek */
     border-radius: 16px;
     margin-bottom: 25px;
 }
 
 .service-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 700;
-    color: #ffffff;
     margin-bottom: 15px;
     min-height: 58px; /* Biar ketinggian tajuk sekata */
 }
@@ -364,24 +362,9 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 .service1-grid p, 
 .service2-grid p, 
 .service3-grid p {
-    font-size: 15px;
-    font-weight: 300;
-    line-height: 1.6;
-    color: #cbd5e0;
+   
     margin-bottom: 30px;
     flex-grow: 1; /* Tolak butang ke bawah jika teks pendek */
 }
 
-/* 6. Gaya Butang "Learn More" Kapsul */
-.btn-FOM {
-    display: inline-block;
-    background: linear-gradient(135deg, #4a74b4, #2b4c80);
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 700;
-    padding: 12px 28px;
-    border-radius: 50px; /* Membulatkan butang */
-    letter-spacing: 0.5px;
-    transition: background 0.3s ease;
-} }
+}
