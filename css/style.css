@@ -208,7 +208,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 }
 
 .hero-text-block h1 {
-    font-size: 4rem; /* Saiz tulisan tajuk yang besar dan tebal */
+    font-size: 3rem; /* Saiz tulisan tajuk yang besar dan tebal */
     font-weight: 800;
     line-height: 1.2;
     margin-bottom: 25px;
