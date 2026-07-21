@@ -415,3 +415,76 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     text-align: center;
     margin-top: 40px;
 }
+
+/* ==========================================================================
+   CLIENTS SECTION
+   ========================================================================== */
+.clients-section {
+    background: linear-gradient(
+        to left, 
+        rgba(29, 65, 133, 1.0), 
+        rgba(19, 43, 87, 1.0), 
+        rgba(7, 15, 31, 1.0)
+    );
+    padding: 80px 0;
+    font-family: 'Inter', sans-serif;
+    text-align: center;
+}
+
+.clients-section h2 {
+    font-size: 46px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 40px;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+}
+
+/* Container utama yang menyusun kad logo & butang "SEE MORE" sebaris */
+.clients-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px; /* Jarak antara kad yang kemas */
+    flex-wrap: wrap; /* Mesra skrin mudah alih (mobile-friendly) */
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Kad Logo Putih (Ikut Figma Mockup) */
+.clients-card {
+    background: #ffffff; /* Latar belakang putih */
+    border-radius: 28px; /* Bucu melengkung */
+    width: 180px;        /* Saiz kad yang sekata */
+    height: 180px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Bayang lembut di bawah kad */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.clients-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Tetapan Standard untuk Semua Logo */
+.clients-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Memastikan nisbah gambar tidak penyek */
+    padding: 10px;        /* Ruang bernafas standard */
+    transition: transform 0.3s ease;
+}
+
+/* 🌟 KHAST UNTUK LOGO SHELL / LOGO BESAR (Visual Balance Adjustment) */
+/* Tambah class "logo-shell" atau "logo-adjust" pada tag <img> di HTML */
+.clients-card img.logo-shell,
+.clients-card img.logo-adjust {
+    padding: 24px; /* Menambah ruang dalam supaya saiz visual logo nampak seimbang dengan Petronas/KPOC */
+    transform: scale(1.0); /* Ngecilkan sikit saiz skala */
+}
+
