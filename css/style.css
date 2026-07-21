@@ -569,7 +569,13 @@ footer div:last-child p {
     justify-content: center;
     align-items: center;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Bayang lembut di bawah kad */
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transisi dikemaskan supaya pergerakan lebih halus/smooth */
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
+                box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
+                border-color 0.4s ease;
+    cursor: pointer;
+    overflow: hidden; /* Mengelakkan logo terkeluar dari bucu melengkung semasa membesar */
+    border: 2px solid transparent;
 }
 
 .clients-card:hover {
@@ -594,3 +600,28 @@ footer div:last-child p {
     transform: scale(1.0); /* Ngecilkan sikit saiz skala */
 }
 
+/* ==========================================================================
+   SCROLL REVEAL ANIMATION (EFFECT)
+   ========================================================================== */
+
+/* Keadaan Asal: Lutsinar (Invisible) & Turun Ke Bawah 40px */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), 
+                transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: opacity, transform;
+}
+
+/* Keadaan Selepas Scroll Sampai: Muncul & Naik Ke Posisi Asal */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 🌟 KESAN STAGGERED (Kad Muncul Satu Per Satu Secara Berurutan) */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }
+.delay-5 { transition-delay: 0.5s; }
