@@ -171,6 +171,112 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     transform: translateX(-50%) translateY(5px);
 }
 
+
+
+/* ==========================================================================
+   FOOTER FIXED - ALIGNMENT & BALANCE
+   ========================================================================== */
+
+footer {
+    background-color: #070e1c !important;
+    padding: 60px 0 50px 0 !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #ffffff !important;
+}
+
+/* Container utama - Gunakan Grid sejajar atas */
+footer .container,
+footer > div {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+    display: grid !important;
+    grid-template-columns: 1.4fr 1fr 1fr !important; /* Nisbah lajur seimbang */
+    gap: 40px !important;
+    align-items: start !important; /* 🌟 Kunci utama: Selaraskan semua lajur sejajar dari ATAS */
+}
+
+/* --- LAJUR 1: LOGO & ABOUT --- */
+footer img {
+    height: 55px !important; /* 🌟 Kecilkan sedikit tinggi logo supaya rata */
+    width: auto !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    object-fit: contain !important;
+}
+
+/* Tajuk Syarikat di Bawah Logo */
+footer h3, 
+footer .company-name {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+}
+
+footer p {
+    color: #a0aec0 !important;
+    font-size: 13.5px !important;
+    font-weight: 300 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 8px !important;
+}
+
+/* --- LAJUR 2 & 3: TAJUK "Quick Links" & "Contact Us" --- */
+/* Selaraskan margin tajuk supaya SEPARAS dengan bahagian atas logo */
+footer h4,
+footer .footer-title {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important; /* Bagi jarak sebelum senarai bermula */
+    line-height: 1.2 !important;
+}
+
+/* Senarai Link (Quick Links) */
+footer ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer ul li {
+    margin-bottom: 10px !important;
+}
+
+footer ul li a,
+footer a {
+    color: #cbd5e0 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+    display: inline-block !important;
+}
+
+footer ul li a:hover,
+footer a:hover {
+    color: #60a5fa !important;
+    transform: translateX(4px) !important;
+}
+
+/* Detail Alamat & Telefon */
+footer div:last-child p {
+    color: #cbd5e0 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+/* Responsif Mobile */
+@media (max-width: 850px) {
+    footer .container,
+    footer > div {
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+    }
+}
 /* ==========================================================================
    HERO SECTION
    ========================================================================== */
