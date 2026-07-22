@@ -638,12 +638,25 @@ footer div:last-child p {
    -------------------------------------------------------------------------- */
 .mainAbUs-section {
     background: linear-gradient(135deg, #070f1f 0%, #132b57 50%, #1d4185 100%);
-    padding: 160px 0 100px 0;
+    
+    /* 🌟 KUNCI 1: Paksa seksyen memenuhi 100% ketinggian skrin */
+    min-height: 100vh;
+    width: 100%;
+    
+    /* 🌟 KUNCI 2: Guna Flexbox untuk letak kandungan betul-betul kat tengah */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Padding atas elak kandungan terkeluar/terlindung di bawah navbar fixed */
+    padding: 100px 0 60px 0; 
     color: #ffffff;
+    max-width: 100%;
 }
 
 .main-container {
-    max-width: 1500px;
+    width: 100%; /* Pastikan ambil lebar penuh */
+    max-width: 1600px;
     margin: 0 auto;
     padding: 0 5%;
     display: grid;
@@ -651,7 +664,6 @@ footer div:last-child p {
     gap: 60px;
     align-items: center;
 }
-
 .about-content h1 {
     font-size: 42px;
     margin-bottom: 25px;
