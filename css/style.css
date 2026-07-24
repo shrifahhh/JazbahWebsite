@@ -124,32 +124,35 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     color: #102a54;
 }
 
-/* DROPDOWN */
-.dropdown-wrapper {
+/* 1. Pastikan parent <li> berkedudukan relative */
+.nav-links li.dropdown {
     position: relative;
 }
 
-.dropdown-trigger {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-
+/* 2. Tetapan dropdown menu */
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(15px);
+    transform: translateX(-50%) translateY(0); /* Diturunkan sedikit dari atas */
     background-color: #ffffff;
     min-width: 180px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     border-radius: 6px;
     padding: 8px 0;
     list-style: none;
+    
+    /* Keadaan Asal (Sembunyi) */
     display: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1000;
+}
+
+/* 3. Gaya link dalam dropdown */
+.dropdown-menu li {
+    width: 100%;
 }
 
 .dropdown-menu li a {
@@ -158,6 +161,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     text-transform: none;
     font-size: 0.85rem;
     color: #1e3a8a;
+    white-space: nowrap;
 }
 
 .dropdown-menu li a:hover {
@@ -165,12 +169,12 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     color: #3b82f6;
 }
 
-.dropdown-wrapper:hover .dropdown-menu {
+/* 4. PAPARKAN DROPDOWN BILA MOUSE HOVER PARENT <li class="dropdown"> */
+.nav-links li.dropdown:hover .dropdown-menu {
     display: block;
     opacity: 1;
-    transform: translateX(-50%) translateY(5px);
+    visibility: visible;
 }
-
 
 
 /* ==========================================================================
