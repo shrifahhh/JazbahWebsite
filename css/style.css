@@ -671,7 +671,6 @@ footer div:last-child p {
 }
 
 .about-content p {
-    
     margin-bottom: 24px;
     text-align: center;
 }
@@ -1012,3 +1011,149 @@ footer div:last-child p {
     display: inline-block;
 }
 
+/* ==========================================================================
+   SERVICES PAGE STYLES
+   ========================================================================== */
+
+
+
+.services-page-wrapper {
+    background: linear-gradient(180deg, #070f1f 0%, #132b57 50%, #0c1a36 100%);
+    min-height: 100vh;
+    padding: 130px 5% 80px 5%;
+    max-width: max-content;
+    margin: 0 auto;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+
+.services-main-title {
+    font-size: 42px;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+/* Service Row Base Layout */
+.service-row {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 50px;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Text Content Styles */
+.service-text h2 {
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    letter-spacing: 0.5px;
+    color: #ffffff;
+}
+
+.service-text p {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Card Styling for Middle Service Row */
+.service-row-card-wrapper {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Inverted Layout (Image Left, Text Right) */
+.service-row.reverse {
+    grid-template-columns: 1.2fr 1fr;
+}
+
+.service-row.reverse .service-text {
+    order: 2;
+}
+
+.service-row.reverse .service-gallery {
+    order: 1;
+}
+
+/* 3-Image Collage Layout */
+.service-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.gallery-frame {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Center Image Prominence */
+.frame-side {
+    width: 28%;
+    height: 170px;
+}
+
+.frame-center {
+    width: 44%;
+    height: 230px;
+}
+
+.gallery-frame:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Responsive Rules */
+@media (max-width: 992px) {
+    .service-row,
+    .service-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-row.reverse .service-text {
+        order: 1;
+    }
+
+    .service-row.reverse .service-gallery {
+        order: 2;
+    }
+
+    .service-row-card-wrapper {
+        padding: 24px;
+    }
+
+    .frame-side {
+        height: 130px;
+    }
+
+    .frame-center {
+        height: 170px;
+    }
+}
