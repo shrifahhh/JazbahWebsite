@@ -1031,8 +1031,6 @@ footer div:last-child p {
 }
 
 .services-main-title {
-    font-size: 42px;
-    font-weight: 800;
     text-align: center;
     letter-spacing: 2px;
     margin-bottom: 20px;
@@ -1063,7 +1061,7 @@ footer div:last-child p {
     font-size: 15px;
     font-weight: 300;
     line-height: 1.7;
-    color: rgba(255, 255, 255, 0.85);
+    color: #ffffff;
 }
 
 /* Card Styling for Middle Service Row */
