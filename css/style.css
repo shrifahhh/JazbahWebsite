@@ -884,13 +884,13 @@ footer div:last-child p {
     font-weight: 800;
     margin-bottom: 20px;
     text-transform: uppercase;
-    color: #0d1b2a;
+    color: #ffffff;
 }
 
 .policy-text {
     font-size: 16px;
     line-height: 1.7;
-    color: #4a5568;
+    color: #ffffff;
 }
 
 .policy-section > div:last-child {
@@ -900,7 +900,7 @@ footer div:last-child p {
 .policy-section > div:last-child h2 {
     font-size: 28px;
     font-weight: 700;
-    color: #1e293b;
+    color: #ffffff;
     margin-bottom: 25px;
     line-height: 1.35;
 }
@@ -1002,7 +1002,7 @@ footer div:last-child p {
 
 .orgchart-container h2 {
    margin-top: 50px;
-    color: #0d1b2a;
+    color: #ffffff;
     margin-bottom: 45px;
     text-align: center;
 }
