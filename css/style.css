@@ -26,7 +26,7 @@ h1, .hero-text-block h1 {
     letter-spacing: -0.02em;
 }
 
-h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clients-section h2 {
+h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 {
     font-size: 46px;
     font-weight: 700;
     line-height: 1.25;
@@ -531,7 +531,7 @@ footer div:last-child p {
 /* ==========================================================================
    CLIENTS SECTION
    ========================================================================== */
-.clients-section {
+.clientsindex-section {
     background: linear-gradient(
         to left, 
         rgba(29, 65, 133, 1.0), 
@@ -543,7 +543,7 @@ footer div:last-child p {
     text-align: center;
 }
 
-.clients-section h2 {
+.clientsindex-section h2 {
     font-size: 46px;
     font-weight: 700;
     color: #ffffff;
@@ -553,7 +553,7 @@ footer div:last-child p {
 }
 
 /* Container utama yang menyusun kad logo & butang "SEE MORE" sebaris */
-.clients-row {
+.clientsindex-row {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -565,7 +565,7 @@ footer div:last-child p {
 }
 
 /* Kad Logo Putih (Ikut Figma Mockup) */
-.clients-card {
+.clientsindex-card {
     background: #ffffff; /* Latar belakang putih */
     border-radius: 28px; /* Bucu melengkung */
     width: 180px;        /* Saiz kad yang sekata */
@@ -584,13 +584,13 @@ footer div:last-child p {
     border: 2px solid transparent;
 }
 
-.clients-card:hover {
+.clientsindex-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
 /* Tetapan Standard untuk Semua Logo */
-.clients-card img {
+.clientsindex-card img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* Memastikan nisbah gambar tidak penyek */
@@ -600,8 +600,8 @@ footer div:last-child p {
 
 /* 🌟 KHAST UNTUK LOGO SHELL / LOGO BESAR (Visual Balance Adjustment) */
 /* Tambah class "logo-shell" atau "logo-adjust" pada tag <img> di HTML */
-.clients-card img.logo-shell,
-.clients-card img.logo-adjust {
+.clientsindex-card img.logo-shell,
+.clientsindex-card img.logo-adjust {
     padding: 24px; /* Menambah ruang dalam supaya saiz visual logo nampak seimbang dengan Petronas/KPOC */
     transform: scale(1.0); /* Ngecilkan sikit saiz skala */
 }
@@ -1341,5 +1341,110 @@ body {
     .frozenstorage-title,
     .cpu-title {
         font-size: 1.5rem;
+    }
+}
+
+/* ==========================================================================
+   CLIENTS PAGE STYLES
+   ========================================================================== */
+
+.clients-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 100px;
+}
+
+.clients-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.clients-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.clients-subtitle {
+    font-size: 1.25rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 25px 0;
+    text-align: center;
+}
+
+/* Glassmorphism Card Wrapper */
+.clients-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+    margin-bottom: 50px;
+}
+
+/* 4-Column Grid Layout */
+.clients-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+/* White Logo Box Container */
+.client-box {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.client-box img {
+    max-width: 85%;
+    max-height: 85%;
+    object-fit: contain;
+    display: block;
+}
+
+.client-box:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Mobile & Tablet Responsiveness */
+@media (max-width: 992px) {
+    .clients-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+    
+    .clients-card {
+        padding: 25px;
+    }
+}
+
+@media (max-width: 600px) {
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 14px;
+    }
+
+    .clients-title {
+        font-size: 1.6rem;
     }
 }
