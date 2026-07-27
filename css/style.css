@@ -1159,3 +1159,187 @@ footer div:last-child p {
         height: 170px;
     }
 }
+
+/* ==========================================================================
+   FACILITIES PAGE STYLES
+   ========================================================================== */
+
+body {
+    background: linear-gradient(180deg, #070f1f 0%, #0d1e3d 50%, #070f1f 100%);
+    color: #ffffff;
+    
+    margin: 0;
+    padding: 0;
+}
+
+/* Individual Facilities Sections */
+.warehouse-section,
+.yards-section,
+.foodcont-section,
+.transport-section,
+.forzenstorage-section,
+.cpu-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 60px;
+    margin-bottom: 0px;
+}
+
+/* Reduce extra margin for the very first section below header */
+.warehouse-section {
+    margin-top: 100px;
+}
+
+/* Inner Layout Container */
+.section-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Section Header Styles */
+.warehouse-header,
+.yardstorage-header,
+.foodcont-header,
+.transport-header,
+.frozenstorage-header,
+.cpu-header {
+    text-align: center;
+    margin-bottom: 25px;
+    max-width: 800px;
+}
+
+.warehouse-title,
+.yardstorage-title,
+.foodcont-title,
+.transport-title,
+.frozenstorage-title,
+.cpu-title {
+   
+    letter-spacing: 1.5px;
+    color: #ffffff;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+}
+
+.warehouse-address,
+.yardstorage-address,
+.cpu-address {
+  
+    color: #cbd5e1;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Gallery Card Box Styling */
+.warehouse-gallery-card,
+.yardstorage-gallery-card,
+.foodcont-gallery-card,
+.transport-gallery-card,
+.frozenstorage-gallery-card,
+.cpu-gallery-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    box-sizing: border-box;
+}
+
+/* 4-Column Image Grid */
+.warehouse-grid,
+.yardstorage-grid,
+.foodcont-grid,
+.transport-grid,
+.frozenstorage-grid,
+.cpu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+/* Grid Image Items */
+.grid-item {
+    aspect-ratio: 1 / 1;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* Specification Text Below Gallery Cards */
+.facility-specs {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.facility-specs h3 {
+    font-size: 1.25rem;
+    color: #ffffff;
+    margin-top: 25px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.facility-specs p {
+    font-size: 0.95rem;
+    color: #cbd5e1;
+    line-height: 1.8;
+    text-align: center;
+    margin: 0;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .warehouse-grid,
+    .yardstorage-grid,
+    .foodcont-grid,
+    .transport-grid,
+    .frozenstorage-grid,
+    .cpu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .warehouse-grid,
+    .yardstorage-grid,
+    .foodcont-grid,
+    .transport-grid,
+    .frozenstorage-grid,
+    .cpu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .warehouse-title,
+    .yardstorage-title,
+    .foodcont-title,
+    .transport-title,
+    .frozenstorage-title,
+    .cpu-title {
+        font-size: 1.5rem;
+    }
+}
