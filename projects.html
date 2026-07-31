@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jazbah Enterprise | Empowering Sabah's Energy Sector</title>
+    <title>Jazbah Enterprise | Projects</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    
+    <!-- Custom Style -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -22,14 +26,14 @@
             
             <nav class="navbar">  
                 <ul class="nav-links">
-                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="facilities.html">Facilities</a></li>
                     <li class="dropdown">
-                        <a href="credentials.html">Credentials</a>
+                        <a href="javascript:void(0);" class="active">Credentials</a>
                         <ul class="dropdown-menu">
-                            <li><a href="projects.html">Projects</a></li>
+                            <li><a href="projects.html" class="active">Projects</a></li>
                             <li><a href="clients.html">Clients</a></li>
                             <li><a href="license.html">License</a></li>
                         </ul>
@@ -40,94 +44,153 @@
         </div>
     </header>
 
+    <!-- PROJECTS MAIN SECTION -->
+    <main class="projects-section">
+        <h1 class="projects-title">PROJECTS</h1>
 
-
-<div class="project-container">
-  <h2>PROJECT TRACK RECORD</h2>
-
-  <!-- JADUAL UTAMA -->
-  <table id="projectsTable" class="display" style="width:100%">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>Client Name</th>
-        <th>Operational Scope</th>
-        <th>Duration</th>
-        <th>Status</th>
-      </tr>
-    </thead>
-    <tbody>
-      <!-- DATA PROJEK -->
-      <tr>
-        <td>1</td>
-        <td>Petronas Carigali</td>
-        <td>Food Provision Supply</td>
-        <td>2024 - 2026</td>
-        <td><span class="status-badge status-ongoing">Ongoing</span></td>
-      </tr>
-      <tr>
-        <td>2</td>
-        <td>Shell Malaysia</td>
-        <td>Offshore Catering Services</td>
-        <td>2023 - 2025</td>
-        <td><span class="status-badge status-completed">Completed</span></td>
-      </tr>
-      <tr>
-        <td>3</td>
-        <td>Hibiscus Petroleum</td>
-        <td>Manpower Supply (Galley Crew)</td>
-        <td>2025 (6 Months)</td>
-        <td><span class="status-badge status-ongoing">Ongoing</span></td>
-      </tr>
-      <tr>
-        <td>4</td>
-        <td>KPOC</td>
-        <td>Food Provision Supply</td>
-        <td>2022 - 2024</td>
-        <td><span class="status-badge status-completed">Completed</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-
-
-<footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-logo">
-            <img src="images/jazbah-logo.png" alt="Jazbah Logo" class="footer-logo-img">
-            <p>JAZBAH ENTERPRISE SDN. BHD.</p>
-            <p class="reg-num">(1017804-K)</span></span>
-            <p class="footer-desc">A premier 100% Sabahan Bumiputera<br>enterprise delivering integrated food<br> provisions, offshore catering, and <br>technical support services to<br> Malaysia’s energy sector.</p>
+        <div class="projects-card">
+            <table id="projectsTable" class="display" style="width:100%">
+                <thead>
+                    <tr>
+                        <th>CLIENT</th>
+                        <th>OPERATIONAL SCOPE</th>
+                        <th>DURATION</th>
+                        <th>STATUS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- ADD NEW PROJECTS HERE -->
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>OFFSHORE CATERING AND SERVICES</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>FOOD SUPPLY</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>OFFSHORE CATERING AND SERVICES</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge ongoing">ON GOING</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>OFFSHORE CATERING AND SERVICES</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>MANPOWER SUPPLY</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge ongoing">ON GOING</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>OFFSHORE CATERING AND SERVICES</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>OFFSHORE CATERING AND SERVICES</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge ongoing">ON GOING</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>OFFSHORE CATERING AND SERVICES</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>PETRONAS</td>
+                        <td>FOOD SUPPLY</td>
+                        <td>APRIL 2022–APRIL 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>SHELL MALAYSIA</td>
+                        <td>OFFSHORE CATERING SERVICES</td>
+                        <td>JAN 2023–DEC 2025</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                    <tr>
+                        <td>HIBISCUS PETROLEUM</td>
+                        <td>MANPOWER SUPPLY (GALLEY CREW)</td>
+                        <td>JUNE 2025–DEC 2025</td>
+                        <td><span class="badge ongoing">ON GOING</span></td>
+                    </tr>
+                    <tr>
+                        <td>KPOC</td>
+                        <td>FOOD PROVISION SUPPLY</td>
+                        <td>MARCH 2022–FEB 2024</td>
+                        <td><span class="badge completed">COMPLETED</span></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="footer-nav">
-            <p>Quick Links</p>
-            <ul class="footer-nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="facilities.html">Facilities</a></li>
-                <li class="dropdown">
-                    <a href="credentials.html">Credentials</a>
-                    <ul class="dropdown-menu">
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="clients.html">Clients</a></li>
-                        <li><a href="license.html">License</a></li>
-                    </ul>
-                </li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-        <div class="footer-contact">
-            <p>Contact Us</p>
-            <p>Main Office <br>
-               Lot 7, Block A,<br>
-               1st Floor,Lok Kawi Point,<br>
-               Jalan Papar,89600 Papar, Sabah.<br>
+    </main>
 
-               Tel: +6088-736 818
+    <!-- FOOTER -->
+    <footer class="main-footer">
+        <div class="footer-container">
+            <div class="footer-logo">
+                <img src="images/jazbah-logo.png" alt="Jazbah Logo" class="footer-logo-img">
+                <p>JAZBAH ENTERPRISE SDN. BHD.</p>
+                <p class="reg-num">(1017804-K)</p>
+                <p class="footer-desc">
+                    A premier 100% Sabahan Bumiputera<br>enterprise delivering integrated food<br> provisions, offshore catering, and <br>technical support services to<br> Malaysia’s energy sector.
+                </p>
+            </div>
+            <div class="footer-nav">
+                <p>Quick Links</p>
+                <ul class="footer-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <p>Contact Us</p>
+                <p>
+                    Main Office <br>
+                    Lot 7, Block A,<br>
+                    1st Floor, Lok Kawi Point,<br>
+                    Jalan Papar, 89600 Papar, Sabah.<br><br>
+                    Tel: +6088-736 818
+                </p>
+            </div>
         </div>
-    </div>
     </footer>
+
+    <!-- JQUERY & DATATABLES JS -->
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
+    <!-- INITIALIZE DATATABLE -->
+    <script>
+        $(document).ready(function() {
+            $('#projectsTable').DataTable({
+                "pageLength": 10,
+                "lengthMenu": [5, 10, 25, 50],
+                "ordering": true,
+                "info": false, // Hide "Showing 1 to 10 of X entries" to match mockup
+                "language": {
+                    "search": "",
+                    "searchPlaceholder": "Search...",
+                    "lengthMenu": "Show _MENU_ entries"
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
