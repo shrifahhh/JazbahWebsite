@@ -1,3 +1,6 @@
+/* ==========================================================================
+   GLOBAL RESET & BASE STYLES
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +10,9 @@
 body {
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
+    background: linear-gradient(to right, #070f1f 0%, #132b57 50%, #1d4185 100%);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
 }
 
 .container {
@@ -60,7 +65,8 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     left: 0;
     width: 100%;
     z-index: 1000;
-    background: linear-gradient(to left, rgba(114, 147, 204, 0.4), rgba(255, 255, 255, 0.4)), #ffffff;
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.4), rgba(114, 147, 204, 0.4)), #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
 }
 
@@ -120,29 +126,25 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 }
 
 .nav-links li:last-child a {
-    font-weight: 800;
-    color: #102a54;
+    font-weight: 600;
+    color: #1e3a8a;
 }
 
-/* 1. Pastikan parent <li> berkedudukan relative */
 .nav-links li.dropdown {
     position: relative;
 }
 
-/* 2. Tetapan dropdown menu */
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 50%;
-    transform: translateX(-50%) translateY(0); /* Diturunkan sedikit dari atas */
+    transform: translateX(-50%) translateY(0);
     background-color: #ffffff;
     min-width: 180px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     border-radius: 6px;
     padding: 8px 0;
     list-style: none;
-    
-    /* Keadaan Asal (Sembunyi) */
     display: none;
     opacity: 0;
     visibility: hidden;
@@ -150,7 +152,6 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     z-index: 1000;
 }
 
-/* 3. Gaya link dalam dropdown */
 .dropdown-menu li {
     width: 100%;
 }
@@ -160,6 +161,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     padding: 10px 20px;
     text-transform: none;
     font-size: 0.85rem;
+    font-weight: 500;
     color: #1e3a8a;
     white-space: nowrap;
 }
@@ -169,118 +171,12 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     color: #3b82f6;
 }
 
-/* 4. PAPARKAN DROPDOWN BILA MOUSE HOVER PARENT <li class="dropdown"> */
 .nav-links li.dropdown:hover .dropdown-menu {
     display: block;
     opacity: 1;
     visibility: visible;
 }
 
-
-/* ==========================================================================
-   FOOTER FIXED - ALIGNMENT & BALANCE
-   ========================================================================== */
-
-footer {
-    background-color: #070e1c !important;
-    padding: 60px 0 50px 0 !important;
-    font-family: 'Inter', sans-serif !important;
-    color: #ffffff !important;
-}
-
-/* Container utama - Gunakan Grid sejajar atas */
-footer .container,
-footer > div {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 0 30px !important;
-    display: grid !important;
-    grid-template-columns: 1.4fr 1fr 1fr !important; /* Nisbah lajur seimbang */
-    gap: 40px !important;
-    align-items: start !important; /* 🌟 Kunci utama: Selaraskan semua lajur sejajar dari ATAS */
-}
-
-/* --- LAJUR 1: LOGO & ABOUT --- */
-footer img {
-    height: 55px !important; /* 🌟 Kecilkan sedikit tinggi logo supaya rata */
-    width: auto !important;
-    margin-bottom: 20px !important;
-    display: block !important;
-    object-fit: contain !important;
-}
-
-/* Tajuk Syarikat di Bawah Logo */
-footer h3, 
-footer .company-name {
-    color: #ffffff !important;
-    font-size: 15px !important;
-    font-weight: 700 !important;
-    margin-bottom: 12px !important;
-    line-height: 1.4 !important;
-}
-
-footer p {
-    color: #a0aec0 !important;
-    font-size: 13.5px !important;
-    font-weight: 300 !important;
-    line-height: 1.6 !important;
-    margin-bottom: 8px !important;
-}
-
-/* --- LAJUR 2 & 3: TAJUK "Quick Links" & "Contact Us" --- */
-/* Selaraskan margin tajuk supaya SEPARAS dengan bahagian atas logo */
-footer h4,
-footer .footer-title {
-    color: #ffffff !important;
-    font-size: 16px !important;
-    font-weight: 700 !important;
-    margin-top: 0 !important;
-    margin-bottom: 20px !important; /* Bagi jarak sebelum senarai bermula */
-    line-height: 1.2 !important;
-}
-
-/* Senarai Link (Quick Links) */
-footer ul {
-    list-style: none !important;
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-footer ul li {
-    margin-bottom: 10px !important;
-}
-
-footer ul li a,
-footer a {
-    color: #cbd5e0 !important;
-    text-decoration: none !important;
-    font-size: 14px !important;
-    font-weight: 300 !important;
-    transition: color 0.2s ease, transform 0.2s ease !important;
-    display: inline-block !important;
-}
-
-footer ul li a:hover,
-footer a:hover {
-    color: #60a5fa !important;
-    transform: translateX(4px) !important;
-}
-
-/* Detail Alamat & Telefon */
-footer div:last-child p {
-    color: #cbd5e0 !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
-}
-
-/* Responsif Mobile */
-@media (max-width: 850px) {
-    footer .container,
-    footer > div {
-        grid-template-columns: 1fr !important;
-        gap: 35px !important;
-    }
-}
 /* ==========================================================================
    HERO SECTION
    ========================================================================== */
@@ -326,7 +222,8 @@ footer div:last-child p {
 
 .btn-FOM {
     display: inline-block;
-    background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, #3b82f6 0%, #1d4ed8 100%);
     color: #ffffff;
     text-decoration: none;
     font-weight: 800;
@@ -344,10 +241,11 @@ footer div:last-child p {
 }
 
 /* ==========================================================================
-   WHY CHOOSE US SECTION (DIBETULKAN SINTAKS)
+   WHY CHOOSE US SECTION
    ========================================================================== */
 .whyChooseUs-section {
-    background: linear-gradient(to left, rgba(29, 65, 133, 1.0), rgba(19, 43, 87, 1.0), rgba(7, 15, 31, 1.0));
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, rgba(7, 15, 31, 1.0), rgba(19, 43, 87, 1.0), rgba(29, 65, 133, 1.0));
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
 }
@@ -386,7 +284,8 @@ footer div:last-child p {
    OUR SERVICES SECTION
    ========================================================================== */
 .services-section {
-    background: linear-gradient(to left, rgba(29, 65, 133, 1.0), rgba(19, 43, 87, 1.0), rgba(7, 15, 31, 1.0));
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, rgba(7, 15, 31, 1.0), rgba(19, 43, 87, 1.0), rgba(29, 65, 133, 1.0));
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
 }
@@ -459,7 +358,7 @@ footer div:last-child p {
 }
 
 /* ==========================================================================
-   HSE SECTION (SEKARANG SUDAH BERFUNGSI DENGAN BAIK!)
+   HSE SECTION
    ========================================================================== */
 .HSE-section {
     background: #FFFFFF;
@@ -468,8 +367,6 @@ footer div:last-child p {
 }
 
 .HSE-container {
-    
-    
     max-width: 1600px;
     margin: 0 auto;
     padding: 0 5%;
@@ -484,17 +381,14 @@ footer div:last-child p {
     font-size: 46px;
     font-weight: 700;
     margin-bottom: 40px;
-    color: #000000; /* 💡 Nota: Tukar dari 'black' ke '#ffffff' supaya nampak atas background gelap */
+    color: #000000;
 }
 
-/* Kotak Kad HSE (Sama macam gaya kad Services supaya konsisten) */
 .HSE-details1,
 .HSE-details2,
 .HSE-details3 {
-    
-    padding: 80px 0;
-    border-radius: 24px;
     padding: 35px 25px;
+    border-radius: 24px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -505,7 +399,7 @@ footer div:last-child p {
 .HSE-details2:hover,
 .HSE-details3:hover {
     transform: translateY(-5px);
-    background: rgba(255, 255, 255, 0.07);
+    background: rgba(0, 0, 0, 0.03);
 }
 
 .HSE-container h3 {
@@ -532,11 +426,12 @@ footer div:last-child p {
    CLIENTS SECTION
    ========================================================================== */
 .clientsindex-section {
+    /* Updated gradient direction to left-to-right */
     background: linear-gradient(
-        to left, 
-        rgba(29, 65, 133, 1.0), 
+        to right, 
+        rgba(7, 15, 31, 1.0), 
         rgba(19, 43, 87, 1.0), 
-        rgba(7, 15, 31, 1.0)
+        rgba(29, 65, 133, 1.0)
     );
     padding: 80px 0;
     font-family: 'Inter', sans-serif;
@@ -552,35 +447,32 @@ footer div:last-child p {
     letter-spacing: -0.01em;
 }
 
-/* Container utama yang menyusun kad logo & butang "SEE MORE" sebaris */
 .clientsindex-row {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 25px; /* Jarak antara kad yang kemas */
-    flex-wrap: wrap; /* Mesra skrin mudah alih (mobile-friendly) */
+    gap: 25px;
+    flex-wrap: wrap;
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
-/* Kad Logo Putih (Ikut Figma Mockup) */
 .clientsindex-card {
-    background: #ffffff; /* Latar belakang putih */
-    border-radius: 28px; /* Bucu melengkung */
-    width: 180px;        /* Saiz kad yang sekata */
+    background: #ffffff;
+    border-radius: 28px;
+    width: 180px;
     height: 180px;
     padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Bayang lembut di bawah kad */
-    /* Transisi dikemaskan supaya pergerakan lebih halus/smooth */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), 
                 box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1),
                 border-color 0.4s ease;
     cursor: pointer;
-    overflow: hidden; /* Mengelakkan logo terkeluar dari bucu melengkung semasa membesar */
+    overflow: hidden;
     border: 2px solid transparent;
 }
 
@@ -589,28 +481,23 @@ footer div:last-child p {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
 }
 
-/* Tetapan Standard untuk Semua Logo */
 .clientsindex-card img {
     width: 100%;
     height: 100%;
-    object-fit: contain; /* Memastikan nisbah gambar tidak penyek */
-    padding: 10px;        /* Ruang bernafas standard */
+    object-fit: contain;
+    padding: 10px;
     transition: transform 0.3s ease;
 }
 
-/* 🌟 KHAST UNTUK LOGO SHELL / LOGO BESAR (Visual Balance Adjustment) */
-/* Tambah class "logo-shell" atau "logo-adjust" pada tag <img> di HTML */
 .clientsindex-card img.logo-shell,
 .clientsindex-card img.logo-adjust {
-    padding: 24px; /* Menambah ruang dalam supaya saiz visual logo nampak seimbang dengan Petronas/KPOC */
-    transform: scale(1.0); /* Ngecilkan sikit saiz skala */
+    padding: 24px;
+    transform: scale(1.0);
 }
 
 /* ==========================================================================
-   SCROLL REVEAL ANIMATION (EFFECT)
+   SCROLL REVEAL ANIMATION
    ========================================================================== */
-
-/* Keadaan Asal: Lutsinar (Invisible) & Turun Ke Bawah 40px */
 .reveal {
     opacity: 0;
     transform: translateY(40px);
@@ -619,57 +506,50 @@ footer div:last-child p {
     will-change: opacity, transform;
 }
 
-/* Keadaan Selepas Scroll Sampai: Muncul & Naik Ke Posisi Asal */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* 🌟 KESAN STAGGERED (Kad Muncul Satu Per Satu Secara Berurutan) */
 .delay-1 { transition-delay: 0.1s; }
 .delay-2 { transition-delay: 0.2s; }
 .delay-3 { transition-delay: 0.3s; }
 .delay-4 { transition-delay: 0.4s; }
 .delay-5 { transition-delay: 0.5s; }
 
-
-
-
 /* ==========================================================================
-   ABOUT US PAGE COMPLETE STYLES
+   ABOUT US PAGE STYLES
    ========================================================================== */
-
 .mainAbUs-section {
-    background: linear-gradient(135deg, #070f1f 0%, #132b57 50%, #1d4185 100%);
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, #070f1f 0%, #132b57 50%, #1d4185 100%);
     min-height: 100vh;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 120px 0 80px 0; 
-   
 }
 
 .main-container {
     width: 100%;
-    max-width: 1200px; /* Reduced slightly for tight center focus */
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers container items horizontally */
+    align-items: center;
     gap: 50px;
 }
 
-/* Centered Copy Block */
 .about-content {
     max-width: 850px;
-    text-align: center; /* Centers all headings & paragraphs */
+    text-align: center;
     margin: 0 auto;
 }
 
 .about-content h1 {
-   font-size: 42px;
+    font-size: 42px;
     margin-bottom: 24px;
     text-align: center;
 }
@@ -679,38 +559,35 @@ footer div:last-child p {
     text-align: center;
 }
 
-/* Properly Centered List Items */
 .about-facts {
     list-style: none;
     padding: 0;
     margin: 0 auto;
-    display: inline-flex; /* Keeps facts nicely block-centered */
+    display: inline-flex;
     flex-direction: column;
-    align-items: flex-start; /* Keeps text left-aligned to bullets relative to each other */
+    align-items: flex-start;
     gap: 10px;
 }
 
 .about-facts li {
     position: relative;
     padding-left: 20px;
-   
     color: rgba(255, 255, 255, 0.95);
     text-align: left;
 }
 
 .about-facts li::before {
     content: "•";
-    color: #000000;
+    color: #3b82f6;
     font-size: 22px;
     position: absolute;
     left: 0;
     top: -3px;
 }
 
-/* Perfectly Centered Gallery Container */
 .gallery-container {
     width: 100%;
-    max-width: 1100px; /* Keeps gallery nicely proportioned */
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -770,23 +647,19 @@ footer div:last-child p {
 .gallery-item:hover img {
     transform: scale(1.04);
 }
-/* --------------------------------------------------------------------------
-   2. EXECUTION PHILOSOPHY SECTION WITH OVERLAY (.execution-section)
-   -------------------------------------------------------------------------- */
+
+/* ==========================================================================
+   EXECUTION PHILOSOPHY SECTION
+   ========================================================================== */
 .execution-section {
     position: relative;
     width: 100%;
-    
-    /* Overlay gelap + gambar latar kapal */
     background-image: linear-gradient(rgba(7, 15, 31, 0.78), rgba(7, 15, 31, 0.88)), 
                       url('../images/vmbackground.png');
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    
-    /* 🌟 Gambar akan BERGERAK / SKROL SEKALI bersama halaman */
     background-attachment: scroll; 
-    
     padding: 110px 0 100px 0;
     color: #ffffff;
     text-align: center;
@@ -799,21 +672,17 @@ footer div:last-child p {
     position: relative;
     z-index: 2;
 }
+
 .execution-title {
-   
     margin-bottom: 50px;
-    
 }
 
 .execution-quote {
-   
     font-style: italic;
     max-width: 820px;
     margin: 0 auto 80px auto;
-    margin-bottom: 200px;
 }
 
-/* Grid Vision & Mission (Glassmorphism Effect) */
 .vision-mission-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -860,15 +729,12 @@ footer div:last-child p {
 }
 
 .vm-label {
-    display: none; /* Disembunyikan sekiranya tidak diperlukan */
+    display: none;
 }
 
-
-/* --------------------------------------------------------------------------
-   3. POLICY SECTION (.policy-section)
-   -------------------------------------------------------------------------- */
-
-
+/* ==========================================================================
+   POLICY SECTION
+   ========================================================================== */
 .policy-section {
     max-width: 1300px;
     margin: 0 auto;
@@ -905,12 +771,12 @@ footer div:last-child p {
     line-height: 1.35;
 }
 
-
 /* ==========================================================================
    HEALTH, SAFETY & ENVIRONMENT (HSE2) SECTION
    ========================================================================== */
 .HSE2-section {
-    background: linear-gradient(135deg, #070f1f 0%, #132b57 50%, #1d4185 100%);
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, #070f1f 0%, #132b57 50%, #1d4185 100%);
     padding: 80px 0;
     font-family: 'Montserrat', sans-serif;
     width: 100%;
@@ -924,12 +790,10 @@ footer div:last-child p {
 }
 
 .HSE-title {
-   
     text-transform: uppercase;
     margin-bottom: 40px;
 }
 
-/* Pembalut Grid */
 .HSE2-grid-wrapper {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -937,7 +801,6 @@ footer div:last-child p {
     width: 100%;
 }
 
-/* Gaya Asas Semua Kad */
 .HSE2-content1,
 .HSE2-content2,
 .HSE2-content3,
@@ -965,7 +828,7 @@ footer div:last-child p {
     font-weight: 700;
     color: #1d4185;
     margin-bottom: 15px;
-    text-align:center; 
+    text-align: center; 
 }
 
 .HSE2-grid-wrapper p {
@@ -976,32 +839,23 @@ footer div:last-child p {
     text-align: justify;
 }
 
-/* Layout Desktop: 3 Kad Atas, 2 Kad Bawah Di Tengah */
 @media (min-width: 992px) {
     .HSE2-content1 { grid-column: span 2; }
     .HSE2-content2 { grid-column: span 2; }
     .HSE2-content3 { grid-column: span 2; }
-
-    /* Dua kad bawah diset supaya duduk di tengah-tengah */
     .HSE2-content4 { grid-column: 2 / span 2; }
     .HSE2-content5 { grid-column: 4 / span 2; }
 }
 
-/* Responsif Mobile & Tablet */
-@media (max-width: 991px) {
-    .HSE2-grid-wrapper {
-        display: flex;
-        flex-direction: column;
-    }
-}
 .orgchart-container {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 5%;
+    text-align: center;
 }
 
 .orgchart-container h2 {
-   margin-top: 50px;
+    margin-top: 50px;
     color: #ffffff;
     margin-bottom: 45px;
     text-align: center;
@@ -1018,14 +872,12 @@ footer div:last-child p {
 /* ==========================================================================
    SERVICES PAGE STYLES
    ========================================================================== */
-
-
-
 .services-page-wrapper {
-    background: linear-gradient(180deg, #070f1f 0%, #132b57 50%, #0c1a36 100%);
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, #070f1f 0%, #132b57 50%, #0c1a36 100%);
     min-height: 100vh;
     padding: 130px 5% 80px 5%;
-    max-width: max-content;
+    max-width: 1400px;
     margin: 0 auto;
     box-sizing: border-box;
     color: #ffffff;
@@ -1042,7 +894,6 @@ footer div:last-child p {
     text-transform: uppercase;
 }
 
-/* Service Row Base Layout */
 .service-row {
     display: grid;
     grid-template-columns: 1fr 1.2fr;
@@ -1051,7 +902,6 @@ footer div:last-child p {
     padding: 20px 0;
 }
 
-/* Text Content Styles */
 .service-text h2 {
     font-size: 30px;
     font-weight: 800;
@@ -1068,7 +918,6 @@ footer div:last-child p {
     color: #ffffff;
 }
 
-/* Card Styling for Middle Service Row */
 .service-row-card-wrapper {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1078,7 +927,6 @@ footer div:last-child p {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Inverted Layout (Image Left, Text Right) */
 .service-row.reverse {
     grid-template-columns: 1.2fr 1fr;
 }
@@ -1091,7 +939,6 @@ footer div:last-child p {
     order: 1;
 }
 
-/* 3-Image Collage Layout */
 .service-gallery {
     display: flex;
     align-items: center;
@@ -1115,7 +962,6 @@ footer div:last-child p {
     display: block;
 }
 
-/* Center Image Prominence */
 .frame-side {
     width: 28%;
     height: 170px;
@@ -1131,48 +977,9 @@ footer div:last-child p {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive Rules */
-@media (max-width: 992px) {
-    .service-row,
-    .service-row.reverse {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .service-row.reverse .service-text {
-        order: 1;
-    }
-
-    .service-row.reverse .service-gallery {
-        order: 2;
-    }
-
-    .service-row-card-wrapper {
-        padding: 24px;
-    }
-
-    .frame-side {
-        height: 130px;
-    }
-
-    .frame-center {
-        height: 170px;
-    }
-}
-
 /* ==========================================================================
    FACILITIES PAGE STYLES
    ========================================================================== */
-
-body {
-    background: linear-gradient(135deg, #070f1f 0%, #132b57 50%, #1d4185 100%);
-    color: #ffffff;
-    
-    margin: 0;
-    padding: 0;
-}
-
-/* Individual Facilities Sections */
 .warehouse-section,
 .yards-section,
 .foodcont-section,
@@ -1185,15 +992,12 @@ body {
     width: 100%;
     box-sizing: border-box;
     margin-top: 60px;
-    margin-bottom: 0px;
 }
 
-/* Reduce extra margin for the very first section below header */
 .warehouse-section {
     margin-top: 100px;
 }
 
-/* Inner Layout Container */
 .section-container {
     max-width: 1200px;
     width: 100%;
@@ -1203,7 +1007,6 @@ body {
     align-items: center;
 }
 
-/* Section Header Styles */
 .warehouse-header,
 .yardstorage-header,
 .foodcont-header,
@@ -1221,7 +1024,6 @@ body {
 .transport-title,
 .frozenstorage-title,
 .cpu-title {
-   
     letter-spacing: 1.5px;
     color: #ffffff;
     text-transform: uppercase;
@@ -1231,13 +1033,11 @@ body {
 .warehouse-address,
 .yardstorage-address,
 .cpu-address {
-  
     color: #ffffff;
     line-height: 1.6;
     margin: 0;
 }
 
-/* Gallery Card Box Styling */
 .warehouse-gallery-card,
 .yardstorage-gallery-card,
 .foodcont-gallery-card,
@@ -1254,7 +1054,6 @@ body {
     box-sizing: border-box;
 }
 
-/* 4-Column Image Grid */
 .warehouse-grid,
 .yardstorage-grid,
 .foodcont-grid,
@@ -1266,7 +1065,6 @@ body {
     gap: 20px;
 }
 
-/* Grid Image Items */
 .grid-item {
     aspect-ratio: 1 / 1;
     border-radius: 10px;
@@ -1288,7 +1086,6 @@ body {
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Specification Text Below Gallery Cards */
 .facility-specs {
     text-align: center;
     margin-top: 10px;
@@ -1311,43 +1108,9 @@ body {
     margin: 0;
 }
 
-/* Responsiveness */
-@media (max-width: 992px) {
-    .warehouse-grid,
-    .yardstorage-grid,
-    .foodcont-grid,
-    .transport-grid,
-    .frozenstorage-grid,
-    .cpu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-}
-
-@media (max-width: 576px) {
-    .warehouse-grid,
-    .yardstorage-grid,
-    .foodcont-grid,
-    .transport-grid,
-    .frozenstorage-grid,
-    .cpu-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .warehouse-title,
-    .yardstorage-title,
-    .foodcont-title,
-    .transport-title,
-    .frozenstorage-title,
-    .cpu-title {
-        font-size: 1.5rem;
-    }
-}
-
 /* ==========================================================================
    CLIENTS PAGE STYLES
    ========================================================================== */
-
 .clients-section {
     padding: 60px 20px;
     display: flex;
@@ -1355,7 +1118,8 @@ body {
     width: 100%;
     box-sizing: border-box;
     margin-top: 100px;
-    background: linear-gradient(135deg, #070f1f 0%, #132b57 50%, #1d4185 100%);
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, #070f1f 0%, #132b57 50%, #1d4185 100%);
 }
 
 .clients-header {
@@ -1382,7 +1146,6 @@ body {
     text-align: center;
 }
 
-/* Glassmorphism Card Wrapper */
 .clients-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1395,14 +1158,12 @@ body {
     margin-bottom: 50px;
 }
 
-/* 4-Column Grid Layout */
 .clients-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
-/* White Logo Box Container */
 .client-box {
     background-color: #ffffff;
     border-radius: 12px;
@@ -1427,33 +1188,9 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
-/* Mobile & Tablet Responsiveness */
-@media (max-width: 992px) {
-    .clients-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 18px;
-    }
-    
-    .clients-card {
-        padding: 25px;
-    }
-}
-
-@media (max-width: 600px) {
-    .clients-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 14px;
-    }
-
-    .clients-title {
-        font-size: 1.6rem;
-    }
-}
-
 /* ==========================================================================
    CONTACT US PAGE STYLES
    ========================================================================== */
-
 .contact-section {
     padding: 60px 20px;
     display: flex;
@@ -1463,7 +1200,6 @@ body {
     margin-top: 80px;
 }
 
-/* Glassmorphism Outer Card Container */
 .contact-card {
     background: rgba(255, 255, 255, 0.05);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -1476,7 +1212,6 @@ body {
     box-sizing: border-box;
 }
 
-/* Form and Details Split Grid */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1484,9 +1219,7 @@ body {
     margin-bottom: 40px;
 }
 
-/* --- LEFT SIDE: FORM STYLES --- */
 .form-title {
-    
     color: #ffffff;
     margin: 0 0 10px 0;
 }
@@ -1586,7 +1319,8 @@ body {
 }
 
 .btn-submit {
-    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    /* Updated gradient direction to left-to-right */
+    background: linear-gradient(to right, #6366f1 0%, #4f46e5 100%);
     color: #ffffff;
     border: none;
     border-radius: 8px;
@@ -1604,7 +1338,6 @@ body {
     transform: translateY(-2px);
 }
 
-/* --- RIGHT SIDE: INFO STYLES --- */
 .info-main-title {
     font-size: 2rem;
     font-weight: 700;
@@ -1684,7 +1417,6 @@ body {
     color: #ffffff;
 }
 
-/* --- MAP EMBED WRAPPER --- */
 .map-container {
     width: 100%;
     border-radius: 16px;
@@ -1694,12 +1426,12 @@ body {
 
 .map-container iframe {
     display: block;
+    width: 100%;
 }
 
 /* ==========================================================================
    PROJECTS TABLE STYLES
    ========================================================================== */
-
 .projects-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -1715,7 +1447,6 @@ body {
     margin-bottom: 35px;
 }
 
-/* White Card Wrapper */
 .projects-card {
     background-color: #ffffff;
     border-radius: 12px;
@@ -1723,7 +1454,6 @@ body {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
 }
 
-/* Base Table Styling */
 table.dataTable {
     border-collapse: collapse !important;
     width: 100% !important;
@@ -1750,7 +1480,6 @@ table.dataTable tbody td {
     vertical-align: middle;
 }
 
-/* Alternating Row Stripe Colors (Soft Blue Tint) */
 table.dataTable tbody tr:nth-child(odd) {
     background-color: #eef2ff !important;
 }
@@ -1763,7 +1492,6 @@ table.dataTable tbody tr:hover {
     background-color: #e0e7ff !important;
 }
 
-/* Status Badges */
 .badge {
     display: inline-block;
     padding: 6px 16px;
@@ -1784,9 +1512,6 @@ table.dataTable tbody tr:hover {
     color: #c2410c;
 }
 
-/* --- OVERRIDE DATATABLES CONTROLS --- */
-
-/* Top Controls Row (Entries Dropdown + Search Box) */
 .dataTables_wrapper .dataTables_length,
 .dataTables_wrapper .dataTables_filter {
     margin-bottom: 15px;
@@ -1828,9 +1553,8 @@ table.dataTable tbody tr:hover {
     background-color: #ffffff !important;
 }
 
-/* Bottom Pagination */
 .dataTables_wrapper .dataTables_paginate {
-    float: center !important;
+    float: none !important;
     text-align: center !important;
     padding-top: 15px !important;
     width: 100%;
@@ -1865,29 +1589,9 @@ table.dataTable tbody tr:hover {
     cursor: default;
 }
 
-/* Responsive Table */
-@media (max-width: 768px) {
-    .dataTables_wrapper .dataTables_length,
-    .dataTables_wrapper .dataTables_filter {
-        float: none;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-    
-    .dataTables_wrapper .dataTables_filter input {
-        width: 100%;
-    }
-    
-    .projects-card {
-        padding: 15px;
-        overflow-x: auto;
-    }
-}
-
 /* ==========================================================================
    LICENSE AND AWARDS SECTION STYLES
    ========================================================================== */
-
 .credentials-page {
     padding: 60px 20px;
     max-width: 900px;
@@ -1907,7 +1611,6 @@ table.dataTable tbody tr:hover {
     margin-bottom: 25px;
 }
 
-/* Outer Floating Card Container */
 .cred-card {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1917,31 +1620,6 @@ table.dataTable tbody tr:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
-/* Image Item Container */
-.grid-item {
-    background-color: #ffffff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.grid-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
-}
-
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-}
-
-/* --- GRID 1: REGISTRATION & LICENSE (3 Columns, Square items) --- */
 .license-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1952,7 +1630,6 @@ table.dataTable tbody tr:hover {
     aspect-ratio: 1 / 1;
 }
 
-/* --- GRID 2: AWARDS (2 Columns, Portrait items + Centered 5th Item) --- */
 .awards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -1963,16 +1640,208 @@ table.dataTable tbody tr:hover {
     aspect-ratio: 3 / 4;
 }
 
-/* Centers the 5th award card at the bottom */
 .grid-item.center-last {
     grid-column: span 2;
     justify-self: center;
     width: 50%;
 }
 
-/* Responsive Scaling */
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+footer {
+    background-color: #070e1c !important;
+    padding: 60px 0 50px 0 !important;
+    font-family: 'Inter', sans-serif !important;
+    color: #ffffff !important;
+}
+
+footer .container,
+footer > div {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 0 30px !important;
+    display: grid !important;
+    grid-template-columns: 1.4fr 1fr 1fr !important;
+    gap: 40px !important;
+    align-items: start !important;
+}
+
+footer img {
+    height: 55px !important;
+    width: auto !important;
+    margin-bottom: 20px !important;
+    display: block !important;
+    object-fit: contain !important;
+}
+
+footer h3, 
+footer .company-name {
+    color: #ffffff !important;
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    margin-bottom: 12px !important;
+    line-height: 1.4 !important;
+}
+
+footer p {
+    color: #a0aec0 !important;
+    font-size: 13.5px !important;
+    font-weight: 300 !important;
+    line-height: 1.6 !important;
+    margin-bottom: 8px !important;
+}
+
+footer h4,
+footer .footer-title {
+    color: #ffffff !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    line-height: 1.2 !important;
+}
+
+footer ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+footer ul li {
+    margin-bottom: 10px !important;
+}
+
+footer ul li a,
+footer a {
+    color: #cbd5e0 !important;
+    text-decoration: none !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+    display: inline-block !important;
+}
+
+footer ul li a:hover,
+footer a:hover {
+    color: #60a5fa !important;
+    transform: translateX(4px) !important;
+}
+
+footer div:last-child p {
+    color: #cbd5e0 !important;
+    font-size: 14px !important;
+    line-height: 1.6 !important;
+}
+
+/* ==========================================================================
+   RESPONSIVENESS BREAKPOINTS
+   ========================================================================== */
+
+/* Large Tablets & Small Laptops (Max Width: 1200px) */
+@media (max-width: 1200px) {
+    h1, .hero-text-block h1 { font-size: 48px; }
+    h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 { font-size: 36px; }
+    h3, .metric-stat-title, .service-title, .HSE-container h3 { font-size: 28px; }
+
+    .whyChooseUs-container,
+    .services-container,
+    .HSE-container {
+        gap: 30px;
+    }
+
+    .vision-mission-grid {
+        gap: 40px;
+    }
+}
+
+/* Tablets & Mobile Devices (Max Width: 992px) */
+@media (max-width: 992px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .whyChooseUs-container,
+    .services-container,
+    .HSE-container {
+        grid-template-columns: 1fr;
+    }
+
+    .services-section-title,
+    .services-section-text,
+    .HSE-section-title,
+    .HSE-FOM-btn {
+        grid-column: span 1;
+    }
+
+    .policy-section,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .vision-mission-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-row,
+    .service-row.reverse {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .service-row.reverse .service-text { order: 1; }
+    .service-row.reverse .service-gallery { order: 2; }
+
+    .warehouse-grid,
+    .yardstorage-grid,
+    .foodcont-grid,
+    .transport-grid,
+    .frozenstorage-grid,
+    .cpu-grid,
+    .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .gallery-slide {
+        grid-template-columns: 1fr;
+    }
+
+    .full-width-block {
+        grid-column: span 1;
+    }
+
+    .info-blocks-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Mobile Screens (Max Width: 768px) */
 @media (max-width: 768px) {
-    .cred-card {
+    h1, .hero-text-block h1 { font-size: 36px; }
+    h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 { font-size: 28px; }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    footer .container,
+    footer > div {
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .cred-card,
+    .contact-card {
         padding: 20px;
     }
 
@@ -1989,5 +1858,46 @@ table.dataTable tbody tr:hover {
     .grid-item.center-last {
         grid-column: span 1;
         width: 100%;
+    }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        float: none;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+        width: 100%;
+    }
+
+    .projects-card {
+        padding: 15px;
+        overflow-x: auto;
+    }
+}
+
+/* Mobile Portrait (Max Width: 576px) */
+@media (max-width: 576px) {
+    .warehouse-grid,
+    .yardstorage-grid,
+    .foodcont-grid,
+    .transport-grid,
+    .frozenstorage-grid,
+    .cpu-grid,
+    .clients-grid,
+    .license-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .clientsindex-card {
+        width: 140px;
+        height: 140px;
+    }
+
+    .btn-FOM,
+    .btn-submit {
+        width: 100%;
+        text-align: center;
     }
 }
