@@ -1901,3 +1901,35 @@ footer div:last-child p {
         text-align: center;
     }
 }
+
+/* --- INDEX NAVBAR SPECIFIC OVERRIDE --- */
+header.main-header {
+    width: 100%;
+    background-color: #ffffff; /* Ensures consistent solid background */
+    border-bottom: 1px solid #e2e8f0;
+}
+
+header.main-header .header-content,
+header.main-header .nav-container {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 15px 20px;
+}
+
+header.main-header .nav-links {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 24px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    list-style: none !important;
+}
+
+header.main-header .nav-links li {
+    display: inline-block !important;
+}
