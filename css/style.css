@@ -1160,19 +1160,31 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 .clients-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 30px 24px; /* Jarak atas-bawah (row gap) ditambah sikit untuk bagi ruang teks */
 }
 
+/* Pembungkus Kotak Putih & Teks */
+.client-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Jarak antara kotak putih & nama di bawah */
+    width: 100%;
+}
+
+/* Kotak Putih Logo (Kekal 100% Mengikut Asal) */
 .client-box {
     background-color: #ffffff;
     border-radius: 12px;
     padding: 20px;
+    width: 100%;
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
 .client-box img {
@@ -1187,6 +1199,16 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
+/* Nama Syarikat di Bawah Kotak Putih */
+.client-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
 /* ==========================================================================
    CONTACT US PAGE STYLES
    ========================================================================== */
@@ -1591,6 +1613,7 @@ table.dataTable tbody tr:hover {
 /* ==========================================================================
    LICENSE AND AWARDS SECTION STYLES
    ========================================================================== */
+
 .credentials-page {
     padding: 60px 20px;
     max-width: 900px;
@@ -1610,6 +1633,7 @@ table.dataTable tbody tr:hover {
     margin-bottom: 25px;
 }
 
+/* Outer Floating Card Container */
 .cred-card {
     background: rgba(255, 255, 255, 0.06);
     border: 1px solid rgba(255, 255, 255, 0.12);
@@ -1619,32 +1643,103 @@ table.dataTable tbody tr:hover {
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
 }
 
+/* Pembungkus Kotak Lesen + Teks Nama */
+.license-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Jarak antara kotak gambar & nama di bawah */
+    width: 100%;
+}
+
+/* Kotak Gambar Putih Asal (Tak Berubah) */
+.grid-item {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 16px; /* 👈 Tambah padding supaya logo ada ruang bernafas */
+    box-sizing: border-box;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.35);
+}
+
+/* Tetapan Gambar Logo */
+.grid-item img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain !important; /* 👈 TUKAR DARI 'cover' KE 'contain' supaya tak penyek/terpotong */
+    display: block;
+}
+
+/* Nama Lesen / Anugerah di Luar Kotak */
+.license-name {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 0.3px;
+}
+
+/* --- GRID 1: REGISTRATION & LICENSE (3 Columns, Square items) --- */
 .license-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 25px;
+    gap: 30px 25px;
 }
 
 .grid-item.square {
     aspect-ratio: 1 / 1;
 }
 
+/* --- GRID 2: AWARDS (2 Columns, Portrait items + Centered 5th Item) --- */
 .awards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 35px 30px;
 }
 
 .grid-item.portrait {
     aspect-ratio: 3 / 4;
 }
 
-.grid-item.center-last {
+/* Centers the 5th award card at the bottom */
+.license-item.center-last {
     grid-column: span 2;
     justify-self: center;
     width: 50%;
 }
 
+/* Responsive Scaling */
+@media (max-width: 768px) {
+    .cred-card {
+        padding: 20px;
+    }
+
+    .license-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px 15px;
+    }
+
+    .awards-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .license-item.center-last {
+        grid-column: span 1;
+        width: 100%;
+    }
+}
 /* ==========================================================================
    FOOTER STYLES
    ========================================================================== */
