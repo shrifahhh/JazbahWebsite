@@ -161,7 +161,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     padding: 10px 20px;
     text-transform: none;
     font-size: 0.85rem;
-    font-weight: 500;
+    
     color: #1e3a8a;
     white-space: nowrap;
 }
