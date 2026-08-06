@@ -10,6 +10,89 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="css/style.css">
+
+    <!-- CSS POPUP MODAL -->
+    <style>
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 16px;
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            transform: scale(0.8);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal-card {
+            transform: scale(1);
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            background-color: #dcfce7;
+            color: #16a34a;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px auto;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .modal-message {
+            font-size: 0.95rem;
+            color: #475569;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        .btn-modal-close {
+            background-color: #102a54;
+            color: #ffffff;
+            border: none;
+            padding: 12px 28px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-modal-close:hover {
+            background-color: #1d4185;
+        }
+    </style>
 </head>
 <body>
 
@@ -52,44 +135,44 @@
         <p class="form-subtitle">We'd love to hear from you. Please fill out this form.</p>
         
         <form id="contactForm" class="contact-form">
-  <div class="form-row">
-    <div class="form-group">
-      <label for="firstName">First name</label>
-      <input type="text" id="firstName" name="First Name" placeholder="First name" required>
-    </div>
-    <div class="form-group">
-      <label for="lastName">Last name</label>
-      <input type="text" id="lastName" name="Last Name" placeholder="Last name" required>
-    </div>
-  </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="First Name" placeholder="First name" required>
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="Last Name" placeholder="Last name" required>
+            </div>
+          </div>
 
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="Sender Email" placeholder="you@company.com" required>
-  </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="Sender Email" placeholder="you@company.com" required>
+          </div>
 
-  <div class="form-group">
-    <label for="phoneNumber">Phone number</label>
-    <div class="phone-input-wrapper">
-      <select id="countryCode" name="Country Code">
-        <option value="MY">MY</option>
-      </select>
-      <input type="tel" id="phoneNumber" name="Phone Number" placeholder="+60" required>
-    </div>
-  </div>
+          <div class="form-group">
+            <label for="phoneNumber">Phone number</label>
+            <div class="phone-input-wrapper">
+              <select id="countryCode" name="Country Code">
+                <option value="MY">MY</option>
+              </select>
+              <input type="tel" id="phoneNumber" name="Phone Number" placeholder="+60" required>
+            </div>
+          </div>
 
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea id="message" name="Message Body" rows="4" placeholder="Leave us a message..." required></textarea>
-  </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="Message Body" rows="4" placeholder="Leave us a message..." required></textarea>
+          </div>
 
-  <div class="form-checkbox">
-    <input type="checkbox" id="privacyPolicy" name="Agreed to Privacy Policy" value="Yes" required>
-    <label for="privacyPolicy">You agree to our friendly privacy policy.</label>
-  </div>
+          <div class="form-checkbox">
+            <input type="checkbox" id="privacyPolicy" name="Agreed to Privacy Policy" value="Yes" required>
+            <label for="privacyPolicy">You agree to our friendly privacy policy.</label>
+          </div>
 
-  <button type="submit" class="btn-submit">Send Message</button>
-</form>
+          <button type="submit" id="submitBtn" class="btn-submit">Send Message</button>
+        </form>
       </section>
 
       <!-- MAKLUMAT SYARIKAT (KANAN) -->
@@ -105,7 +188,7 @@
             <div class="info-content">
               <h3>Email</h3>
               <p class="info-desc">Our friendly team is here to help.</p>
-              <a href="mailto:admin@jazbahenterprise.com" class="info-link">admin@jazbahenterprise.com</a>
+              <a href="mailto:khalisah.sh@student.iium.edu.my" class="info-link">khalisah.sh@student.iium.edu.my</a>
             </div>
           </div>
 
@@ -140,7 +223,7 @@
 
     </div>
 
-    <!-- 2. BAHAGIAN BAWAH: GOOGLE MAPS (PETA PENUH DI BAWAH) -->
+    <!-- 2. BAHAGIAN BAWAH: GOOGLE MAPS -->
     <div class="map-container">
       <iframe 
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3969.043594040928!2d116.04110687588301!3d5.837077694145417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x323b60aae63ec181%3A0xd6493cbe1e88f9f1!2sJazbah%20Enterprise%20Sdn%20Bhd!5e0!3m2!1sen!2smy!4v1700000000000!5m2!1sen!2smy" 
@@ -188,32 +271,58 @@
         </div>
         <div class="footer-contact">
             <p>Contact Us</p>
-                <p>
-                    Main Office <br>
-                    Lot 9, Block B,<br>
-                    2nd Floor, Lok Kawi Point,<br>
-                    Jalan Papar, 89600 Papar, Sabah.<br><br>
-                    Tel: +6088-736 818
-                </p>
+            <p>
+                Main Office <br>
+                Lot 9, Block B,<br>
+                2nd Floor, Lok Kawi Point,<br>
+                Jalan Papar, 89600 Papar, Sabah.<br><br>
+                Tel: +6088-736 818
+            </p>
         </div>
     </div>
 </footer>
-</body>
-<!-- REPLACE THE SCRIPT TAG AT THE BOTTOM WITH THIS -->
+
+<!-- JAVASCRIPT FOR WEB3FORMS & POPUP -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
     const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
 
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // Prevents page reload & browser security warning
+      e.preventDefault();
 
-      // Show success modal popup
-      successModal.classList.add('active');
+      // UI Feedback: Change button text while sending
+      submitBtn.innerText = "Sending...";
+      submitBtn.disabled = true;
 
-      // Clear all inputs
-      contactForm.reset();
+      const formData = new FormData(contactForm);
+      
+      // Web3Forms Access Key
+      formData.append("access_key", "e803c0ca-5094-4b10-b03b-1937dcca70c9");
+
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      })
+      .then(async (response) => {
+        if (response.status === 200) {
+          // Show Modal Popup on Success
+          successModal.classList.add('active');
+          contactForm.reset();
+        } else {
+          alert("Failed to send message. Please check your inputs.");
+        }
+      })
+      .catch(error => {
+        console.error(error);
+        alert("An error occurred. Please try again.");
+      })
+      .finally(() => {
+        submitBtn.innerText = "Send Message";
+        submitBtn.disabled = false;
+      });
     });
 
     closeModalBtn.addEventListener('click', function () {
@@ -227,4 +336,6 @@
     });
   });
 </script>
+
+</body>
 </html>
