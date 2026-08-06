@@ -51,7 +51,7 @@
         <h1 class="form-title">Get in touch</h1>
         <p class="form-subtitle">We'd love to hear from you. Please fill out this form.</p>
         
-        <form action="mailto:admin@jazbahenterprise.com" method="post" enctype="text/plain" class="contact-form">
+        <form id="contactForm" class="contact-form">
   <div class="form-row">
     <div class="form-group">
       <label for="firstName">First name</label>
@@ -206,18 +206,13 @@
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
 
-    if (!contactForm || !successModal || !closeModalBtn) {
-      console.error('Form or Modal elements are missing from the page!');
-      return;
-    }
-
     contactForm.addEventListener('submit', function (e) {
-      e.preventDefault(); // Stop page reload / 405 error
+      e.preventDefault(); // Prevents page reload & browser security warning
 
-      // Show popup
+      // Show success modal popup
       successModal.classList.add('active');
 
-      // Clear all input fields
+      // Clear all inputs
       contactForm.reset();
     });
 
@@ -225,7 +220,6 @@
       successModal.classList.remove('active');
     });
 
-    // Close when clicking outside the popup card
     successModal.addEventListener('click', function (e) {
       if (e.target === successModal) {
         successModal.classList.remove('active');
