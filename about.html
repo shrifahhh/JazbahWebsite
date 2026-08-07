@@ -13,6 +13,7 @@
 </head>
 <body>
 
+   <!-- MAIN HEADER -->
     <header class="main-header">
         <div class="nav-container">
             <a href="index.html" class="logo-area">
@@ -20,14 +21,21 @@
                 <span class="logo-text">JAZBAH ENTERPRISE SDN. BHD. <span class="reg-num">(1017804-K)</span></span>
             </a>
             
-            <nav class="navbar">  
+            <!-- HAMBURGER BUTTON (MOBILE) -->
+            <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <nav class="navbar" id="navMenu">  
                 <ul class="nav-links">
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html" class="active">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="facilities.html">Facilities</a></li>
+                    <li><a href="facilities.html" class="active">Facilities</a></li>
                     <li class="dropdown">
-                        <a href="credentials.html">Credentials</a>
+                        <a href="javascript:void(0);" class="dropdown-trigger">Credentials</a>
                         <ul class="dropdown-menu">
                             <li><a href="projects.html">Projects</a></li>
                             <li><a href="clients.html">Clients</a></li>
@@ -179,6 +187,39 @@
         </div>
     </footer>
 
-    <script src="js/about-gallery.js"></script>
+    <!-- SCRIPT (Scroll Reveal + Hamburger Menu Toggle) -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Scroll Reveal Animation
+            const revealElements = document.querySelectorAll(".reveal");
+            const observerOptions = {
+                root: null,
+                rootMargin: "0px",
+                threshold: 0.15
+            };
+
+            const revealOnScroll = new IntersectionObserver(function (entries, observer) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            revealElements.forEach(el => revealOnScroll.observe(el));
+
+            // Hamburger Menu Toggle Functionality
+            const hamburgerBtn = document.getElementById('hamburgerBtn');
+            const navMenu = document.getElementById('navMenu');
+
+            if (hamburgerBtn && navMenu) {
+                hamburgerBtn.addEventListener('click', function () {
+                    hamburgerBtn.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1832,11 +1832,15 @@ footer div:last-child p {
    RESPONSIVENESS BREAKPOINTS
    ========================================================================== */
 
-/* Large Tablets & Small Laptops (Max Width: 1200px) */
+/* Large Tablets & Laptops (Max Width: 1200px) */
 @media (max-width: 1200px) {
     h1, .hero-text-block h1 { font-size: 48px; }
     h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 { font-size: 36px; }
     h3, .metric-stat-title, .service-title, .HSE-container h3 { font-size: 28px; }
+
+    .hero-container {
+        margin-bottom: 80px;
+    }
 
     .whyChooseUs-container,
     .services-container,
@@ -1847,13 +1851,45 @@ footer div:last-child p {
     .vision-mission-grid {
         gap: 40px;
     }
+
+    .orgchart-img {
+        max-width: 70%;
+    }
+
+    .service-row {
+        gap: 30px;
+    }
 }
 
-/* Tablets & Mobile Devices (Max Width: 992px) */
+/* Medium Tablets & Small Laptops (Max Width: 992px) */
 @media (max-width: 992px) {
+    header.main-header .header-content,
+    header.main-header .nav-container,
     .nav-container {
-        flex-direction: column;
-        gap: 15px;
+        flex-direction: column !important;
+        gap: 15px !important;
+        padding: 15px 20px !important;
+    }
+
+    header.main-header .nav-links,
+    .nav-links {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 16px !important;
+    }
+
+    .hero-section {
+        min-height: auto;
+        padding: 160px 0 60px 0;
+    }
+
+    .hero-container {
+        margin-bottom: 40px;
+    }
+
+    .hero-text-block h1 {
+        font-size: 40px;
+        margin-bottom: 25px;
     }
 
     .whyChooseUs-container,
@@ -1911,23 +1947,46 @@ footer div:last-child p {
     .info-blocks-grid {
         grid-template-columns: 1fr;
     }
+
+    .orgchart-img {
+        max-width: 85%;
+    }
+
+    .services-page-wrapper {
+        padding-top: 180px;
+    }
+
+    .license-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-/* Mobile Screens (Max Width: 768px) */
+/* Mobile Screens & Small Tablets (Max Width: 768px) */
 @media (max-width: 768px) {
-    h1, .hero-text-block h1 { font-size: 36px; }
-    h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 { font-size: 28px; }
+    h1, .hero-text-block h1 { font-size: 32px; }
+    h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 { font-size: 26px; }
     
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 12px;
+    .nav-logo {
+        height: 48px;
+    }
+
+    .logo-text {
+        font-size: 0.9rem;
+    }
+
+    .nav-links li a {
+        font-size: 0.78rem;
     }
 
     footer .container,
     footer > div {
         grid-template-columns: 1fr !important;
-        gap: 35px !important;
+        gap: 30px !important;
+        text-align: center !important;
+    }
+
+    footer img {
+        margin: 0 auto 15px auto !important;
     }
 
     .form-row {
@@ -1935,8 +1994,9 @@ footer div:last-child p {
     }
 
     .cred-card,
-    .contact-card {
-        padding: 20px;
+    .contact-card,
+    .service-row-card-wrapper {
+        padding: 25px 20px;
     }
 
     .license-grid {
@@ -1949,19 +2009,8 @@ footer div:last-child p {
         gap: 20px;
     }
 
-    .grid-item.center-last {
+    .license-item.center-last {
         grid-column: span 1;
-        width: 100%;
-    }
-
-    .dataTables_wrapper .dataTables_length,
-    .dataTables_wrapper .dataTables_filter {
-        float: none;
-        text-align: center;
-        margin-bottom: 10px;
-    }
-
-    .dataTables_wrapper .dataTables_filter input {
         width: 100%;
     }
 
@@ -1969,10 +2018,49 @@ footer div:last-child p {
         padding: 15px;
         overflow-x: auto;
     }
+
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        float: none;
+        text-align: center;
+        margin-bottom: 12px;
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+        width: 100%;
+    }
+
+    .orgchart-img {
+        max-width: 100%;
+    }
+
+    .frame-side {
+        height: 120px;
+    }
+
+    .frame-center {
+        height: 160px;
+    }
+
+    .execution-quote {
+        margin-bottom: 60px;
+    }
 }
 
-/* Mobile Portrait (Max Width: 576px) */
+/* Small Mobile Screens (Max Width: 576px) */
 @media (max-width: 576px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .hero-text-block h1 {
+        font-size: 28px;
+    }
+
+    .hero-text-block p {
+        font-size: 0.95rem;
+    }
+
     .warehouse-grid,
     .yardstorage-grid,
     .foodcont-grid,
@@ -1985,14 +2073,29 @@ footer div:last-child p {
     }
 
     .clientsindex-card {
-        width: 140px;
-        height: 140px;
+        width: 130px;
+        height: 130px;
+        padding: 12px;
     }
 
     .btn-FOM,
     .btn-submit {
         width: 100%;
         text-align: center;
+    }
+
+    .service-gallery {
+        flex-direction: column;
+    }
+
+    .frame-side,
+    .frame-center {
+        width: 100%;
+        height: 200px;
+    }
+
+    .modal-card {
+        padding: 25px 20px;
     }
 }
 
@@ -2107,3 +2210,94 @@ header.main-header .nav-links li {
         .btn-modal-close:hover {
             background-color: #1d4185;
         }
+
+        /* ==========================================================================
+   HAMBURGER BUTTON & MOBILE NAVBAR STYLES
+   ========================================================================== */
+.hamburger-btn {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 28px;
+    height: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+
+.hamburger-btn .bar {
+    width: 100%;
+    height: 3px;
+    background-color: #102a54;
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Pertukaran animasi 'X' bila menu dibuka */
+.hamburger-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger-btn.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-btn.active .bar:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+}
+
+/* Tetapan pada skrin Tablet / Mobile (992px & bawah) */
+@media (max-width: 992px) {
+    .hamburger-btn {
+        display: flex; /* Tunjukkan butang hamburger */
+    }
+
+    .main-header .nav-container {
+        position: relative;
+        justify-content: space-between !important;
+    }
+
+    .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #ffffff;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        border-top: 1px solid #e2e8f0;
+        padding: 20px 0;
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+    }
+
+    .navbar.active {
+        max-height: 500px;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .nav-links {
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 18px !important;
+    }
+
+    .nav-links li.dropdown .dropdown-menu {
+        position: static;
+        transform: none;
+        box-shadow: none;
+        background-color: #f8fafc;
+        text-align: center;
+        border-radius: 8px;
+        margin-top: 8px;
+    }
+
+    .nav-links li.dropdown:hover .dropdown-menu {
+        display: block;
+    }
+}
