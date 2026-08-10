@@ -1073,10 +1073,11 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* UPDATED HERE: Changed object-fit to cover so images fill 100% of the box */
 .grid-item img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover; 
     display: block;
 }
 
@@ -1106,7 +1107,6 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     text-align: center;
     margin: 0;
 }
-
 /* ==========================================================================
    CLIENTS PAGE STYLES
    ========================================================================== */
