@@ -1063,29 +1063,29 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
 }
-
+/* Matching .gallery-frame from Services page */
 .grid-item {
-    aspect-ratio: 1 / 1;
-    border-radius: 10px;
+    aspect-ratio: 4 / 3; /* Smooth rectangle shape */
+    border-radius: 12px;
     overflow: hidden;
-    background-color: #ffffff;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background-color: transparent; /* Removes the white padding box */
+    padding: 0;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* UPDATED HERE: Changed object-fit to cover so images fill 100% of the box */
+/* Matching .gallery-frame img from Services page */
 .grid-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; 
-    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Crops image cleanly edge-to-edge (no vertical white spaces) */
+    display: block !important;
 }
 
 .grid-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
-
 .facility-specs {
     text-align: center;
     margin-top: 10px;
