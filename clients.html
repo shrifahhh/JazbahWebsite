@@ -13,33 +13,40 @@
 </head>
 <body>
 
-    <!-- MAIN HEADER -->
     <header class="main-header">
-        <div class="nav-container">
-            <a href="index.html" class="logo-area">
-                <img src="images/jazbah-logo.png" alt="Jazbah Logo" class="nav-logo">
-                <span class="logo-text">JAZBAH ENTERPRISE SDN. BHD. <span class="reg-num">(1017804-K)</span></span>
-            </a>
-            
-            <nav class="navbar">  
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="facilities.html">Facilities</a></li>
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="active dropdown-trigger">Credentials</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="projects.html">Projects</a></li>
-                            <li><a href="clients.html" class="active">Clients</a></li>
-                            <li><a href="license.html">License</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div class="nav-container">
+        <a href="index.html" class="logo-area">
+            <img src="images/jazbah-logo.png" alt="Jazbah Logo" class="nav-logo">
+            <span class="logo-text">JAZBAH ENTERPRISE SDN. BHD. <span class="reg-num">(1017804-K)</span></span>
+        </a>
+        
+        <!-- HAMBURGER BUTTON (MOBILE) -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="navbar" id="navMenu">  
+            <ul class="nav-links">
+                <!-- Tukar class="active" mengikut halaman fail masing-masing -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="facilities.html">Facilities</a></li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-trigger">Credentials</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="clients.html">Clients</a></li>
+                        <li><a href="license.html">License</a></li>
+                    </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
 
     <!-- CLIENTS SECTION -->
     <section class="clients-section">
