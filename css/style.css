@@ -1899,6 +1899,10 @@ footer div:last-child p {
         grid-template-columns: 1fr;
     }
 
+    .HSE2-grid-wrapper {
+        grid-template-columns: 1fr !important;
+        gap: 20px;
+    }
     .services-section-title,
     .services-section-text,
     .HSE-section-title,
@@ -1910,6 +1914,7 @@ footer div:last-child p {
     .contact-grid {
         grid-template-columns: 1fr;
         gap: 40px;
+        text-align: center;
     }
 
     .vision-mission-grid {
@@ -1961,12 +1966,11 @@ footer div:last-child p {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 /* Mobile Screens & Small Tablets (Max Width: 768px) */
 @media (max-width: 768px) {
-    h1, .hero-text-block h1 { font-size: 32px; }
-    h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 { font-size: 26px; }
-    
+    h1, .hero-text-block h1 { font-size: 28px; }
+    h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2, p { font-size: 25px; }
+    h3, p, .hero-text-block p, .whyChooseUs-section p, .services-section-text, .HSE-section-text, .clientsindex-section p { font-size: 14px; }
     .nav-logo {
         height: 48px;
     }
@@ -2081,8 +2085,10 @@ footer div:last-child p {
 
     .btn-FOM,
     .btn-submit {
-        width: 100%;
+        width: 60%;
         text-align: center;
+        margin: 0 auto;
+
     }
 
     .service-gallery {
