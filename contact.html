@@ -290,58 +290,74 @@
     </div>
 </footer>
 
-<!-- JAVASCRIPT FOR WEB3FORMS & POPUP -->
+<!-- JAVASCRIPT FOR WEB3FORMS, POPUP & HAMBURGER MENU -->
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    // 1. HAMBURGER MENU TOGGLE
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    if (hamburgerBtn && navMenu) {
+      hamburgerBtn.addEventListener('click', function () {
+        hamburgerBtn.classList.toggle('active');
+        navMenu.classList.toggle('active');
+      });
+    }
+
+    // 2. CONTACT FORM & POPUP MODAL (Hanya run kalau form wujud pada page)
     const contactForm = document.getElementById('contactForm');
     const submitBtn = document.getElementById('submitBtn');
     const successModal = document.getElementById('successModal');
     const closeModalBtn = document.getElementById('closeModalBtn');
 
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        e.preventDefault();
 
-      // UI Feedback: Change button text while sending
-      submitBtn.innerText = "Sending...";
-      submitBtn.disabled = true;
+        // UI Feedback: Change button text while sending
+        submitBtn.innerText = "Sending...";
+        submitBtn.disabled = true;
 
-      const formData = new FormData(contactForm);
-      
-      // Updated Web3Forms Access Key
-      formData.append("access_key", "a3f6810f-e167-44a2-a1a5-b74d06889c3a");
+        const formData = new FormData(contactForm);
+        
+        // Web3Forms Access Key
+        formData.append("access_key", "a3f6810f-e167-44a2-a1a5-b74d06889c3a");
 
-      fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData
-      })
-      .then(async (response) => {
-        if (response.status === 200) {
-          // Show Modal Popup on Success
-          successModal.classList.add('active');
-          contactForm.reset();
-        } else {
-          alert("Failed to send message. Please check your inputs.");
-        }
-      })
-      .catch(error => {
-        console.error(error);
-        alert("An error occurred. Please try again.");
-      })
-      .finally(() => {
-        submitBtn.innerText = "Send Message";
-        submitBtn.disabled = false;
+        fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData
+        })
+        .then(async (response) => {
+          if (response.status === 200) {
+            // Show Modal Popup on Success
+            if (successModal) successModal.classList.add('active');
+            contactForm.reset();
+          } else {
+            alert("Failed to send message. Please check your inputs.");
+          }
+        })
+        .catch(error => {
+          console.error(error);
+          alert("An error occurred. Please try again.");
+        })
+        .finally(() => {
+          submitBtn.innerText = "Send Message";
+          submitBtn.disabled = false;
+        });
       });
-    });
+    }
 
-    closeModalBtn.addEventListener('click', function () {
-      successModal.classList.remove('active');
-    });
-
-    successModal.addEventListener('click', function (e) {
-      if (e.target === successModal) {
+    if (closeModalBtn && successModal) {
+      closeModalBtn.addEventListener('click', function () {
         successModal.classList.remove('active');
-      }
-    });
+      });
+
+      successModal.addEventListener('click', function (e) {
+        if (e.target === successModal) {
+          successModal.classList.remove('active');
+        }
+      });
+    }
   });
 </script>
 
