@@ -200,7 +200,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 }
 
 .hero-text-block {
-    max-width: 1900px;
+    max-width: 750px;
     text-align: left;
     color: #ffffff;
 }
@@ -218,6 +218,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     line-height: 1.6;
     margin-bottom: 35px;
     opacity: 0.9;
+    
 }
 
 .btn-FOM {
