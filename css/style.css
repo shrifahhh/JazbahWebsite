@@ -1968,7 +1968,7 @@ footer div:last-child p {
 }
 /* Mobile Screens & Small Tablets (Max Width: 768px) */
 @media (max-width: 768px) {
-    h1, .hero-text-block h1 { font-size: 28px; }
+    h1, .hero-text-block h1 { font-size: 33px; }
     h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2, p { font-size: 25px; }
     h3, p, .hero-text-block p, .whyChooseUs-section p, .services-section-text, .HSE-section-text, .clientsindex-section p { font-size: 14px; }
     .nav-logo {
@@ -2059,7 +2059,7 @@ footer div:last-child p {
     }
 
     .hero-text-block h1 {
-        font-size: 28px;
+        font-size: 33px;
     }
 
     .hero-text-block p {
