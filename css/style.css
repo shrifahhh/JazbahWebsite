@@ -1062,24 +1062,34 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 .cpu-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    gap: 30px 20px; /* Added vertical gap for label room */
 }
-/* Matching .gallery-frame from Services page */
+
+/* Wrapper for Image Box + Label Underneath (Same as Clients Page) */
+.facility-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* Image Box Frame */
 .grid-item {
-    aspect-ratio: 4 / 3; /* Smooth rectangle shape */
+    width: 100%;
+    aspect-ratio: 4 / 3;
     border-radius: 12px;
     overflow: hidden;
-    background-color: transparent; /* Removes the white padding box */
+    background-color: transparent;
     padding: 0;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Matching .gallery-frame img from Services page */
 .grid-item img {
     width: 100% !important;
     height: 100% !important;
-    object-fit: cover !important; /* Crops image cleanly edge-to-edge (no vertical white spaces) */
+    object-fit: cover !important;
     display: block !important;
 }
 
@@ -1087,6 +1097,18 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
 }
+
+/* Label Underneath Each Image */
+.facility-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.35;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
 .facility-specs {
     text-align: center;
     margin-top: 10px;
