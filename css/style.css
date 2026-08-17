@@ -1941,6 +1941,7 @@ footer div:last-child p {
         padding: 15px 20px !important;
     }
 
+    .p {justify-content: center !important; }
     
     .nav-container .logo-text , .nav-container .nav-text .reg-num {
         font-size: 12px !important; 
