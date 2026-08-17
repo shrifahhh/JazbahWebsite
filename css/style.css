@@ -2377,8 +2377,9 @@ header.main-header .nav-links li {
         }
 
   /* ==========================================================================
-   HAMBURGER BUTTON & MOBILE NAVBAR STYLES
+   HAMBURGER BUTTON & MOBILE SIDEBAR STYLES
    ========================================================================== */
+
 .hamburger-btn {
     display: none;
     flex-direction: column;
@@ -2389,8 +2390,8 @@ header.main-header .nav-links li {
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1001;
-    align-self: center; /* FIX: Menghalang butang memanjang mengikut tinggi header */
+    z-index: 1002; /* Stays above the sidebar so you can close it */
+    align-self: center; /* Fixes vertical stretching */
 }
 
 .hamburger-btn .bar {
@@ -2422,48 +2423,60 @@ header.main-header .nav-links li {
 
     .main-header .nav-container {
         position: relative;
-        display: flex; /* Memastikan kontena induk adalah flex */
-        align-items: center !important; /* FIX: Memastikan logo & hamburger kekal di tengah secara menegak */
+        display: flex;
+        align-items: center !important;
         justify-content: space-between !important;
     }
 
+    /* SIDEBAR CONTAINER */
     .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
+        position: fixed;
+        top: 0;
+        right: -300px; /* Tersembunyi di luar skrin sebelah kanan */
+        width: 280px; /* Lebar sidebar */
+        height: 100vh; /* Tinggi penuh skrin */
         background-color: #ffffff;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        border-top: 1px solid #e2e8f0;
-        padding: 0; /* Ubah ke 0 untuk animasi max-height yang lebih mulus */
-        max-height: 0;
-        overflow: hidden;
-        opacity: 0;
-        visibility: hidden;
-        transition: max-height 0.4s ease, opacity 0.3s ease, visibility 0.3s ease;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        padding: 80px 25px 30px 25px; /* Padding atas bagi ruang untuk header/butang */
+        transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 1000;
+        overflow-y: auto; /* Boleh skrol jika menu panjang */
     }
 
+    /* BILA SIDEBAR AKTIF (SLIDE IN) */
     .navbar.active {
-        max-height: 500px;
-        padding: 20px 0; /* Padding hanya aktif bila menu dibuka */
-        opacity: 1;
-        visibility: visible;
+        right: 0; /* Meleret masuk ke dalam skrin */
     }
 
+    /* STYLING SENARAI MENU DALAM SIDEBAR */
     .nav-links {
+        display: flex;
         flex-direction: column !important;
-        align-items: center !important;
-        gap: 18px !important;
+        align-items: flex-start !important; /* Rata kiri untuk teks dalam sidebar */
+        gap: 20px !important;
+        width: 100%;
     }
 
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        font-size: 16px;
+    }
+
+    /* DROPDOWN MENU DALAM SIDEBAR */
     .nav-links li.dropdown .dropdown-menu {
         position: static;
         transform: none;
         box-shadow: none;
         background-color: #f8fafc;
-        text-align: center;
+        text-align: left;
         border-radius: 8px;
-        margin-top: 8px;
+        margin-top: 10px;
+        padding: 10px 15px;
     }
 
     .nav-links li.dropdown:hover .dropdown-menu {
