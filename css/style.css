@@ -1941,6 +1941,12 @@ footer div:last-child p {
         padding: 15px 20px !important;
     }
 
+    
+    .nav-container .logo-text , .nav-container .nav-text .reg-num {
+        font-size: 12px !important; 
+        display: block; 
+    }
+
     header.main-header .nav-links,
     .nav-links {
         flex-wrap: wrap !important;
