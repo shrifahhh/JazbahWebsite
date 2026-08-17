@@ -1,61 +1,116 @@
-/* ==========================================================================
-   GLOBAL RESET & BASE STYLES
-   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+/* ==========================================
+   1. FONT IMPORT & VARIABLES
+   ========================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --font-primary: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --bg-gradient: linear-gradient(to right, #070f1f 0%, #132b57 50%, #1d4185 100%);
+    --color-text: #FFFFFF;
+}
+
+/* ==========================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================== */
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    color: #FFFFFF;
-    background: linear-gradient(to right, #070f1f 0%, #132b57 50%, #1d4185 100%);
+    font-family: var(--font-primary);
+    color: var(--color-text);
+    background: var(--bg-gradient);
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
 }
 
-.container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: 0 20px;
+/* Form controls inherit main font */
+input, button, select, textarea {
+    font-family: inherit;
 }
 
-/* ==========================================================================
-   TYPOGRAPHY
-   ========================================================================== */
-h1, .hero-text-block h1 {
+/* ==========================================
+   3. GLOBAL DESKTOP TYPOGRAPHY
+   ========================================== */
+h1 {
     font-size: 64px;
     font-weight: 800;
-    line-height: 1.15;
-    letter-spacing: -0.02em;
+    line-height: 1.2;
 }
 
-h2, .whyChooseUs-section h2, .services-section-title, .HSE-section-title, .clientsindex-section h2 {
+h2 {
     font-size: 46px;
-    font-weight: 700;
-    line-height: 1.25;
-    letter-spacing: -0.01em;
-}
-
-h3, .metric-stat-title, .service-title, .HSE-container h3 {
-    font-size: 36px;
     font-weight: 700;
     line-height: 1.3;
 }
 
-p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .service3-grid p, .HSE-container p {
+h3 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+p {
     font-size: 16px;
-    font-weight: 300;
     line-height: 1.6;
-    color: #FFFFFF; 
 }
 
-.hero-text-block h1,
-.hero-text-block p {
-    color: #ffffff;
+/* ==========================================
+   4. SECTION SPECIFICS (INHERITED FONTS)
+   ========================================== */
+.hero-text-block h1 {
+    font-size: 3rem;
 }
 
+.services-section-title {
+    font-size: 2.2rem;
+}
+
+.vision-mission-section h2 {
+    font-size: 30px;
+}
+
+/* Base selectors inherit naturally from body, removing redundant font-family declarations */
+.whyChooseUs-section,
+.services-section,
+.HSE-section,
+.clientsindex-section,
+footer {
+    color: var(--color-text);
+}
+
+/* ==========================================
+   5. RESPONSIVE TYPOGRAPHY (MOBILE)
+   ========================================== */
+@media (max-width: 768px) {
+    h1, 
+    .hero-text-block h1 {
+        font-size: 33px;
+    }
+
+    /* Fixed: Removed 'p' from h2 selector */
+    h2, 
+    .whyChooseUs-section h2, 
+    .services-section-title, 
+    .HSE-section-title, 
+    .clientsindex-section h2 {
+        font-size: 25px;
+    }
+
+    h3, 
+    p, 
+    .hero-text-block p, 
+    .whyChooseUs-section p, 
+    .services-section-text, 
+    .HSE-section-text, 
+    .clientsindex-section p {
+        font-size: 14px;
+    }
+}
 /* ==========================================================================
    NAVBAR
    ========================================================================== */
@@ -888,10 +943,11 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 
 .services-main-title {
     text-align: center;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+    font-size: 2.2rem;
+    font-weight: 800;
     color: #ffffff;
-    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
 }
 
 .service-row {
@@ -1024,10 +1080,12 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
 .transport-title,
 .frozenstorage-title,
 .cpu-title {
-    letter-spacing: 1.5px;
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 800;
     color: #ffffff;
-    text-transform: uppercase;
-    margin-top: 0px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
 }
 
 .warehouse-address,
@@ -2008,9 +2066,16 @@ footer div:last-child p {
     .service-row.reverse .service-gallery { order: 2; }
     .service-text h2, .services-main-title , .service-text p {text-align: center; }
 
+    .service-text h2 {
+        font-size: 28px;
+        margin-top: 0px;
+    }
+
     .services-main-title {
         text-align: center;
-        margin-top: 10 px;    }
+        margin-top: 5px;
+        margin-bottom: 0px;
+    }
 
     .warehouse-grid,
     .yardstorage-grid,
@@ -2090,7 +2155,7 @@ footer div:last-child p {
         text-align: left;
         display: block;
     }
-    
+
     .cred-card,
     .contact-card,
     .service-row-card-wrapper {
