@@ -1480,6 +1480,7 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     padding: 60px 20px;
     max-width: 1200px;
     margin: 80px auto 0 auto;
+    box-sizing: border-box;
 }
 
 .projects-title {
@@ -1496,8 +1497,10 @@ p, .hero-text-block p, .metric-stat-text, .service1-grid p, .service2-grid p, .s
     border-radius: 12px;
     padding: 25px 30px;
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+    overflow-x: auto; /* Allows smooth horizontal scrolling on mobile */
 }
 
+/* Base DataTables Styling */
 table.dataTable {
     border-collapse: collapse !important;
     width: 100% !important;
@@ -1513,6 +1516,7 @@ table.dataTable thead th {
     letter-spacing: 0.5px;
     padding: 16px 12px !important;
     border-bottom: 1px solid #e2e8f0 !important;
+    white-space: nowrap; /* Prevents awkward column header wrapping */
 }
 
 table.dataTable tbody td {
@@ -1544,6 +1548,7 @@ table.dataTable tbody tr:hover {
     font-weight: 700;
     letter-spacing: 0.5px;
     text-align: center;
+    white-space: nowrap;
 }
 
 .badge.completed {
@@ -1556,6 +1561,7 @@ table.dataTable tbody tr:hover {
     color: #c2410c;
 }
 
+/* DataTables Controls Layout */
 .dataTables_wrapper .dataTables_length,
 .dataTables_wrapper .dataTables_filter {
     margin-bottom: 15px;
@@ -1590,6 +1596,7 @@ table.dataTable tbody tr:hover {
     outline: none;
     background: #f8fafc url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') no-repeat 12px center !important;
     width: 260px;
+    box-sizing: border-box;
 }
 
 .dataTables_wrapper .dataTables_filter input:focus {
@@ -1597,17 +1604,19 @@ table.dataTable tbody tr:hover {
     background-color: #ffffff !important;
 }
 
+/* Pagination */
 .dataTables_wrapper .dataTables_paginate {
     float: none !important;
     text-align: center !important;
     padding-top: 15px !important;
     width: 100%;
+    clear: both;
 }
 
 .dataTables_wrapper .dataTables_paginate .paginate_button {
     border-radius: 8px !important;
     padding: 6px 14px !important;
-    margin: 0 3px !important;
+    margin: 2px !important;
     border: none !important;
     background: #f1f5f9 !important;
     color: #475569 !important;
@@ -1633,6 +1642,44 @@ table.dataTable tbody tr:hover {
     cursor: default;
 }
 
+/* ==========================================================================
+   MOBILE & TABLET RESPONSIVE FIXES
+   ========================================================================== */
+@media screen and (max-width: 768px) {
+    .projects-section {
+        padding: 30px 15px;
+        margin-top: 40px;
+    }
+
+    .projects-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
+        margin-top: 15px;
+    }
+
+    .projects-card {
+        padding: 15px; /* Smaller card padding on mobile */
+    }
+
+    /* Stack Search and Show Entries cleanly on mobile */
+    .dataTables_wrapper .dataTables_length,
+    .dataTables_wrapper .dataTables_filter {
+        float: none !important;
+        text-align: center !important;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    .dataTables_wrapper .dataTables_filter input {
+        width: 100% !important; /* Full width search bar */
+    }
+
+    table.dataTable tbody td,
+    table.dataTable thead th {
+        padding: 10px 8px !important;
+        font-size: 0.75rem !important;
+    }
+}
 /* ==========================================================================
    LICENSE AND AWARDS SECTION STYLES
    ========================================================================== */
@@ -1952,6 +1999,11 @@ footer div:last-child p {
 
     .service-row.reverse .service-text { order: 1; }
     .service-row.reverse .service-gallery { order: 2; }
+    .service-text h2, .services-main-title , .service-text p {text-align: center; }
+
+    .services-main-title {
+        text-align: center;
+        margin-top: 10 px;    }
 
     .warehouse-grid,
     .yardstorage-grid,
@@ -1996,11 +2048,16 @@ footer div:last-child p {
     .nav-logo {
         height: 48px;
     }
-
+    
+    .about-content h1 { font-size: 25px; }
     .logo-text {
         font-size: 0.9rem;
     }
-
+     
+    .services-main-title h1 { 
+        margin-bottom: 0px;
+    }
+    
     .nav-links li a {
         font-size: 0.78rem;
     }
@@ -2020,6 +2077,9 @@ footer div:last-child p {
         grid-template-columns: 1fr;
     }
 
+    .form-group label, .info-content h3, .info-content p , .info-link, .info-desc, .info-detail , .office-address{ text-align: left; }
+    
+    
     .cred-card,
     .contact-card,
     .service-row-card-wrapper {
