@@ -2149,10 +2149,16 @@ footer div:last-child p {
         grid-template-columns: 1fr;
     }
 
-    .form-group label, .info-content h3, .info-content p , .info-desc, .info-detail , .office-address{ text-align: left; }
+    .info-icon { position: center; margin: 0 auto; }
+
+    .form-group label { text-align: left; }
     
+.info-content h3, .info-content p , .info-desc, .info-detail , .office-address {
+        text-align: center;
+    } 
+
     .info-content .info-link {
-        text-align: left;
+        text-align: center;
         display: block;
     }
 
