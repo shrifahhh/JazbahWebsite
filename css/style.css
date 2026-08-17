@@ -2376,7 +2376,7 @@ header.main-header .nav-links li {
             background-color: #1d4185;
         }
 
-        /* ==========================================================================
+  /* ==========================================================================
    HAMBURGER BUTTON & MOBILE NAVBAR STYLES
    ========================================================================== */
 .hamburger-btn {
@@ -2390,6 +2390,7 @@ header.main-header .nav-links li {
     cursor: pointer;
     padding: 0;
     z-index: 1001;
+    align-self: center; /* FIX: Menghalang butang memanjang mengikut tinggi header */
 }
 
 .hamburger-btn .bar {
@@ -2421,6 +2422,8 @@ header.main-header .nav-links li {
 
     .main-header .nav-container {
         position: relative;
+        display: flex; /* Memastikan kontena induk adalah flex */
+        align-items: center !important; /* FIX: Memastikan logo & hamburger kekal di tengah secara menegak */
         justify-content: space-between !important;
     }
 
@@ -2432,7 +2435,7 @@ header.main-header .nav-links li {
         background-color: #ffffff;
         box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         border-top: 1px solid #e2e8f0;
-        padding: 20px 0;
+        padding: 0; /* Ubah ke 0 untuk animasi max-height yang lebih mulus */
         max-height: 0;
         overflow: hidden;
         opacity: 0;
@@ -2442,6 +2445,7 @@ header.main-header .nav-links li {
 
     .navbar.active {
         max-height: 500px;
+        padding: 20px 0; /* Padding hanya aktif bila menu dibuka */
         opacity: 1;
         visibility: visible;
     }
