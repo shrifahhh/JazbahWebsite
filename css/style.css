@@ -2084,8 +2084,12 @@ footer div:last-child p {
         grid-template-columns: 1fr;
     }
 
-    .form-group label, .info-content h3, .info-content p , .info-link, .info-desc, .info-detail , .office-address{ text-align: left; }
+    .form-group label, .info-content h3, .info-content p , .info-desc, .info-detail , .office-address{ text-align: left; }
     
+    .info-content .info-link {
+        text-align: left;
+        display: block;
+    }
     
     .cred-card,
     .contact-card,
