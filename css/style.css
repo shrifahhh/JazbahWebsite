@@ -1123,6 +1123,33 @@ footer {
     gap: 30px 20px; /* Added vertical gap for label room */
 }
 
+/* Tukar grid ke Flexbox supaya item terakhir auto-center */
+.transport-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Menengahkan baris bawah yang tidak cukup 4 item */
+    gap: 30px 20px;
+}
+
+/* Tetapkan saiz setiap item supaya kekal 4 lajur pada desktop */
+.transport-section .facility-item {
+    width: calc(25% - 15px); /* 25% to fit 4 items per row minus gap */
+    box-sizing: border-box;
+}
+
+/* Responsif untuk Tablet & Mobile */
+@media (max-width: 992px) {
+    .transport-section .facility-item {
+        width: calc(50% - 10px); /* 2 item per baris pada skrin kecil */
+    }
+}
+
+@media (max-width: 576px) {
+    .transport-section .facility-item {
+        width: 100%; /* 1 item per baris pada mobile */
+    }
+}
+
 /* Wrapper for Image Box + Label Underneath (Same as Clients Page) */
 .facility-item {
     display: flex;
