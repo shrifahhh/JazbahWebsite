@@ -1902,15 +1902,18 @@ table.dataTable tbody tr:hover {
 /* ==========================================================================
    FOOTER STYLES
    ========================================================================== */
-footer {
+/* ==========================================================================
+   MAIN FOOTER STYLES
+   ========================================================================== */
+footer, .main-footer {
     background-color: #070e1c !important;
-    padding: 60px 0 50px 0 !important;
+    padding: 60px 0 30px 0 !important;
     font-family: 'Inter', sans-serif !important;
     color: #ffffff !important;
 }
 
-footer .container,
-footer > div {
+/* Container for 3 Columns */
+.footer-container {
     max-width: 1200px !important;
     margin: 0 auto !important;
     padding: 0 30px !important;
@@ -1920,6 +1923,7 @@ footer > div {
     align-items: start !important;
 }
 
+/* Logo & Headings */
 footer img {
     height: 55px !important;
     width: auto !important;
@@ -1955,6 +1959,7 @@ footer .footer-title {
     line-height: 1.2 !important;
 }
 
+/* Footer Navigation Links */
 footer ul {
     list-style: none !important;
     padding: 0 !important;
@@ -1965,8 +1970,7 @@ footer ul li {
     margin-bottom: 10px !important;
 }
 
-footer ul li a,
-footer a {
+footer ul li a {
     color: #cbd5e0 !important;
     text-decoration: none !important;
     font-size: 14px !important;
@@ -1975,18 +1979,61 @@ footer a {
     display: inline-block !important;
 }
 
-footer ul li a:hover,
-footer a:hover {
+footer ul li a:hover {
     color: #60a5fa !important;
     transform: translateX(4px) !important;
 }
 
-footer div:last-child p {
-    color: #cbd5e0 !important;
-    font-size: 14px !important;
-    line-height: 1.6 !important;
+/* ==========================================================================
+   FOOTER BOTTOM (COPYRIGHT & CREDITS)
+   ========================================================================== */
+.footer-bottom {
+    max-width: 1200px !important;
+    margin: 40px auto 0 auto !important;
+    padding: 20px 30px 0 30px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 13px !important;
+    color: #94a3b8 !important;
+    font-weight: 300 !important;
 }
 
+.footer-bottom p {
+    margin-bottom: 0 !important;
+    color: #94a3b8 !important;
+}
+
+/* Developer Credit Link Styling */
+a.credit-link,
+.footer-bottom a {
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-weight: 500 !important;
+    transform: none !important; /* Disables translateX slide for developer link */
+    transition: color 0.2s ease !important;
+}
+
+a.credit-link:hover,
+.footer-bottom a:hover {
+    color: #38bdf8 !important;
+    text-decoration: underline !important;
+}
+
+/* Responsive Fix for Mobile/Tablets */
+@media (max-width: 768px) {
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+
+    .footer-bottom {
+        flex-direction: column !important;
+        text-align: center !important;
+        gap: 12px !important;
+    }
+}
 /* ==========================================================================
    RESPONSIVENESS BREAKPOINTS
    ========================================================================== */
