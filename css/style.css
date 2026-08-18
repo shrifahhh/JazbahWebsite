@@ -2243,6 +2243,10 @@ footer div:last-child p {
     }
 }
 
+    .warehouse-title, .yardstorage-title, .foodcont-title, .transport-title, .frozenstorage-title, .cpu-title {
+        font-size: 25px;
+    }
+
 /* Small Mobile Screens (Max Width: 576px) */
 @media (max-width: 576px) {
     .container {
