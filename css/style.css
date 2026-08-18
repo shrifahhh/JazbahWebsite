@@ -334,6 +334,7 @@ footer {
     font-weight: 300;
     line-height: 1.6;
     color: #FFFFFF; 
+    text-align: center;
 }
 
 /* ==========================================================================
@@ -613,6 +614,7 @@ footer {
 .about-content p {
     margin-bottom: 24px;
     text-align: center;
+
 }
 
 .about-facts {
@@ -965,6 +967,7 @@ footer {
     margin-bottom: 18px;
     letter-spacing: 0.5px;
     color: #ffffff;
+    text-align: center;
 }
 
 .service-text p {
@@ -972,6 +975,7 @@ footer {
     font-weight: 300;
     line-height: 1.7;
     color: #ffffff;
+    text-align: justify;
 }
 
 .service-row-card-wrapper {
