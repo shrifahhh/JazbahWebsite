@@ -1125,6 +1125,7 @@ footer {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 30px 20px; /* Added vertical gap for label room */
+    position: relative;
 }
 
 /* Tukar grid ke Flexbox supaya item terakhir auto-center */
@@ -1139,6 +1140,14 @@ footer {
 .transport-section .facility-item {
     width: calc(25% - 15px); /* 25% to fit 4 items per row minus gap */
     box-sizing: border-box;
+}
+.frozenstorage-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Set to 3 columns instead of 4 */
+    justify-content: center;
+    gap: 30px 20px;
+    max-width: 900px; /* Constrains grid width so it looks balanced */
+    margin: 0 auto;  /* Centers grid block */
 }
 
 /* Responsif untuk Tablet & Mobile */
