@@ -1519,7 +1519,7 @@ footer {
     border-radius: 8px;
     padding: 0 12px;
     font-size: 0.9rem;
-    color: #0f172a;
+    color: #e7e8ea;
     cursor: pointer;
     outline: none;
 }
@@ -2218,7 +2218,7 @@ a.credit-link:hover,
     h3, .metric-stat-title, .service-title, .HSE-container h3 { font-size: 28px; }
 
     .hero-container {
-        margin-bottom: 80px;
+        margin-bottom: 50px;
     }
 
     .whyChooseUs-container,
@@ -2504,7 +2504,7 @@ a.credit-link:hover,
 
     .btn-FOM,
     .btn-submit {
-        width: 60%;
+        width: 50%;
         text-align: center;
         margin: 0 auto;
 
