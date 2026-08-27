@@ -1780,14 +1780,20 @@ table.dataTable tbody tr:hover {
 }
 
 .dataTables_wrapper .dataTables_filter input {
+    color: #0f172a !important; /* 👈 Fixes white text: forces text to dark navy/black */
     border: 1px solid #cbd5e1 !important;
     border-radius: 20px !important;
     padding: 8px 16px 8px 36px !important;
     font-size: 0.85rem !important;
     outline: none;
-    background: #f8fafc url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') no-repeat 12px center !important;
+    background: #f8fafc url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="%2394a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>') no-repeat 12px center !important;
     width: 260px;
     box-sizing: border-box;
+}
+.dataTables_wrapper .dataTables_filter label {
+    color: #475569 !important; /* Makes the "Search:" label text clear and visible */
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .dataTables_wrapper .dataTables_filter input:focus {
